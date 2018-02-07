@@ -1,0 +1,12 @@
+{
+  "name": "node-server",
+  "version": "1.0.0",
+  "description": "A project that introduces simple node services",
+  "main": "N",
+  "scripts": {
+    "start": "node ./bin/www",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "lianpf",
+  "license": "ISC"
+}

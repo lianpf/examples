@@ -1,0 +1,23 @@
+@import "../utils/common";
+
+.commonButtonDemo{
+  display: block;
+  font-size: @fontSizeNormal;
+  width: 120px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 5px;
+}
+.button{
+  .commonButtonDemo;
+  background: @color-red;
+  color: @color-white;
+  cursor: pointer;
+}
+.disabledButton{
+  .commonButtonDemo;
+  background: @color-gray-shallow;
+  color: @colorGray2;
+  cursor: not-allowed;
+}

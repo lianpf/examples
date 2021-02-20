@@ -1,0 +1,36 @@
+@import "../utils/common";
+
+.homePage{
+  width: 100%;
+  padding: 0 170px 144px 14px;
+  min-height: 500px;
+  overflow: hidden;
+  .item:not(:last-child) {
+    margin-bottom: 50px;
+    //background: red;
+  }
+  .item{
+    ul li{
+      list-style-type: circle;
+    }
+    .titleOne{
+      font-size: 30px;
+    }
+    .titleTwo{
+      font-size: @fontSizeMax;
+    }
+    .titleThree{
+      font-size: @fontSizeLargeMore
+    }
+    .normalText{
+      font-size: @fontSizeNormal;
+    }
+    .inlineBlock{
+      display: inline-block;
+      vertical-align: top;
+    }
+    .firstInlineBlock{
+      margin-right: 8px;
+    }
+  }
+}

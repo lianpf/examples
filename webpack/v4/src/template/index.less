@@ -1,0 +1,36 @@
+@import "../utils/common";
+
+.show-example-layout{
+  //background: red;
+  font-family: 'MyFont';
+  position: absolute;
+  width: 96%;
+  color: @color-black;
+  //width: 200px;
+  //height: 60px;
+  display: inline-block;
+  margin-bottom: 40px;
+  box-sizing: border-box;
+}
+
+.component-demo-list {
+  width: 100%;
+  :nth-child(2n+1){
+    margin-right: 5%;
+  }
+  box-sizing: border-box;
+  .component-demo-item{
+    float: left;
+    width: 40%;
+    border: 1px dashed @color-gray-shallow;
+    height: 360px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    padding: 16px;
+    .show-demo-item{
+      margin-bottom: 5px;
+      box-sizing: border-box;
+    }
+  }
+}
+

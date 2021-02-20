@@ -1,9 +1,7 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# 所有 project 依赖模块 
+node_modules
 
-# dependencies
-/node_modules
-
-# production
+# 所有 project 构建的 production package
 /dist
 
 # misc

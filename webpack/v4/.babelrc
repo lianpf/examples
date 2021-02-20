@@ -1,0 +1,20 @@
+{
+    // 预设
+    "presets": ["@babel/preset-env", "@babel/preset-react"],
+    // 插件
+    "plugins": [
+        [
+            "@babel/plugin-transform-runtime",
+            {
+                "corejs": 3,
+                "loose": true
+            }
+        ],
+        [
+            "@babel/plugin-proposal-class-properties",
+            {
+                "loose": true
+            }
+        ]
+    ]
+}

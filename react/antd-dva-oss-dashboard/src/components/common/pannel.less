@@ -1,0 +1,50 @@
+.flex-container {
+  display: -moz-box;  /* Firefox */
+  display: -ms-flexbox;    /* IE10 */
+  display: -webkit-box;    /* Safari */
+  display: -webkit-flex;    /* Chrome, WebKit */
+  display: flexbox;
+  display: flex;
+}
+
+@baseColor: #41b883;
+
+
+.panelBox {
+  margin-bottom: 20px;
+  background: #f9f9f9;
+  border: 1px #e9e9e9 solid;
+  height: 100px;
+}
+
+.panelContainer {
+  padding: 10px 0;
+  height: 100%;
+  float: left;
+  &:not(:last-child)>.panelWrapper:after {
+    content: '';
+    height: 100%;
+    background: #ccc;
+    width: 1px;
+    position: absolute;
+    right: -2px;
+    top: 0;
+  }
+  .panelWrapper {
+    height: 100%;
+    position: relative;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    .flex-container;
+    .panelData {
+      color: @baseColor;
+      font-size: 20px;
+      font-weight: 300;
+    }
+    .panelTip {
+      font-size: 14px;
+    }
+
+  }
+}

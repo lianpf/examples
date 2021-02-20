@@ -1,0 +1,53 @@
+{
+  "//": "menus菜单数据mock",
+  "activeApp": "sdzz",
+  "applicationList": [
+    {"appId": 1, "appName": "业务线-a", "appCode": "sdzz"},
+    {"appId": 17, "appName": "业务线-b", "appCode": "qsyq"},
+    {"appId": 19, "appName": "业务线-c", "appCode": "jyd"}
+  ],
+  "menuList": {
+    "sdzz": [
+      {"id": 1, "navs": [], "parentName": "首页-a", "value": "/home"},
+      {
+        "id": 2,
+        "navs": [
+          {"id": 21, "key": "菜单-a", "value": "/systemManagement/menu", "navs": []},
+          {"id": 22, "key": "角色账单-a", "value": "/systemManagement/role", "navs": []},
+          {"id": 23, "key": "管理员账单-a", "value": "/systemManagement/admin", "navs": []}
+        ],
+        "parentName": "系统管理-a",
+        "value": "/systemManagement"
+      },
+      {"id": 3, "navs": [], "parentName": "用户管理-a", "value": "/userManagement/userInfo"}
+    ],
+    "qsyq": [
+      {"id": 1, "navs": [], "parentName": "首页-b", "value": "/home"},
+      {
+        "id": 2,
+        "navs": [
+          {"id": 21, "key": "菜单-b", "value": "/systemManagement/menu", "navs": []},
+          {"id": 22, "key": "角色账单-b", "value": "/systemManagement/role", "navs": []},
+          {"id": 23, "key": "管理员账单-b", "value": "/systemManagement/admin", "navs": []}
+        ],
+        "parentName": "系统管理-b",
+        "value": "/systemManagement"
+      },
+      {"id": 3, "navs": [], "parentName": "用户管理-b", "value": "/userManagement/userInfo"}
+    ],
+    "jyd": [
+      {"id": 1, "navs": [], "parentName": "首页-c", "value": "/home"},
+      {
+        "id": 2,
+        "navs": [
+          {"id": 21, "key": "菜单-c", "value": "/systemManagement/menu", "navs": []},
+          {"id": 22, "key": "角色账单-c", "value": "/systemManagement/role", "navs": []},
+          {"id": 23, "key": "管理员账单-c", "value": "/systemManagement/admin", "navs": []}
+        ],
+        "parentName": "系统管理-c",
+        "value": "/systemManagement"
+      },
+      {"id": 3, "navs": [], "parentName": "用户管理-c", "value": "/userManagement/userInfo"}
+    ]
+  }
+}

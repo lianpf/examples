@@ -1,0 +1,27 @@
+{
+  "name": "koa2-ts-mongodb",
+  "version": "1.0.0",
+  "description": "koa2-mongodb-ts demo",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon start.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
+    "babel-register": "^6.26.0",
+    "koa": "^2.13.1",
+    "koa-bodyparser": "^4.3.0",
+    "koa-router": "^10.0.0",
+    "koa2-cors": "^2.0.6",
+    "mongoose": "^5.11.18",
+    "nodemon": "^2.0.7"
+  },
+  "devDependencies": {
+    "@types/koa": "^2.13.0",
+    "tslint": "^6.1.3",
+    "typescript": "^4.1.5"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "name": "example",
+  "version": "1.0.0",
+  "description": "Template project of lianpf(曜灵)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lianpf/examples"
+  },
+  "keywords": [
+    "react",
+    "react17",
+    "vue",
+    "vue3",
+    "ts",
+    "node",
+    "express",
+    "koa",
+    "koa2",
+    "mysql",
+    "mongodb",
+    "webpack",
+    "vite"
+  ],
+  "author": "lianpf (曜灵)",
+  "license": "ISC"
+}

@@ -5,12 +5,20 @@
 `koa2` + `mongoDB` + `TS`
 
 ### 项目目录结构
+tree -I 'node_modules' > README.md
+
 ```
-├── node_modules             依赖包
-├── routes                   路由
-|   ├── index.js             
-|   ├── user.js              
-├── app.js                   主入口文件
-├── start.js                 处理import配置文件
-└── package.json
+├── README.md
+├── app
+│   ├── controller
+│   │   └── user.js
+│   ├── dbHelper
+│   │   └── user.js
+│   └── router.js
+├── app.js
+├── configs
+│   └── cors.js
+├── package-lock.json
+├── package.json
+└── start.js
 ```

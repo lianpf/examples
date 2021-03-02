@@ -1,0 +1,27 @@
+{
+  "name": "vue3-ts",
+  "version": "1.0.0",
+  "description": "Template project depending on vue3 and TS",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "vue": "^3.0.4"
+  },
+  "devDependencies": {
+    "vite": "^1.0.0-rc.13",
+    "@vue/compiler-sfc": "^3.0.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lianpf/examples/vue/vue3-ts"
+  },
+  "keywords": [
+    "vue3",
+    "ts",
+    "vite"
+  ],
+  "author": "lianpf (曜灵)",
+  "license": "ISC"
+}

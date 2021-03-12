@@ -1,15 +1,31 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3.0 + Vite" />
+  <div>
+    <HeaderNav />
+    <div class="layout-content">
+      <RouterView />
+    </div>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import HeaderNav from "./components/HeaderNav";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
+    HeaderNav
   }
-}
+};
 </script>
+
+<style lang="stylus">
+#app
+  height: 100vh;
+  .layout-content
+    position: absolute;
+    top: $headerHeight;
+    bottom: 0;
+    width: 100%;
+    > div
+      height: 100%;
+</style>

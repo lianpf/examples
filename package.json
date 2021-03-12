@@ -26,5 +26,8 @@
     "vite"
   ],
   "author": "lianpf (曜灵)",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@vue/cli-plugin-typescript": "^4.5.11"
+  }
 }

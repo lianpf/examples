@@ -23,5 +23,9 @@
     "@types/koa": "^2.13.0",
     "tslint": "^6.1.3",
     "typescript": "^4.1.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lianpf/examples/tree/master/node/koa2-mongodb"
   }
 }

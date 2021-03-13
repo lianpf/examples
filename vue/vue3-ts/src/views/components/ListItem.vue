@@ -1,50 +1,49 @@
 <template>
   <div class="list-item">
     <div>
-      <span>theme-color:</span>
-      <span>{{ userThemeColor }}</span>
-    </div>
-    <!-- <div>
-      <span>userLocation:</span>
-      <span>{{ userLocation }}</span>
+      <span>content:</span>
+      <span>{{ data.id }}</span>
     </div>
     <div>
-      <span>userGeolocation:</span>
-      <span>{{ userGeolocation }}</span>
-    </div> -->
-    <div>
-      <span>content ———— </span>
       <span>name: {{ data.name }}</span>
       &nbsp;&nbsp;
       <span>desc: {{ data.desc }}</span>
+      &nbsp;&nbsp;
+      <button @click="() => goDetail(data.id)">详情1</button>
+      &nbsp;&nbsp;
+      <RouterLink class="user" :to="`/detail/${data.id}`">
+        <i class="iconfont icon-user" /> 详情2
+      </RouterLink>
     </div>
     <!-- <button @click="updateThemeColor">change color</button> -->
   </div>
 </template>
 
 <script lang="ts">
-import { inject, defineComponent } from "vue";
+import { defineComponent } from "vue";
+import { useRouter } from "vue-router";
 export default defineComponent({
   name: "ListItem",
   props: {
     data: Object
   },
-  steup(props: any) {
-    // 调用 inject 函数时，通过指定的数据名称，获取到父级共享的数据
-    const userThemeColor = inject("themeColor");
-    // const updateThemeColor = inject("updateThemeColor");
-    // console.log("--userThemeColor--", userThemeColor);
-
-    // const userLocation = inject('location', 'The Universe')
-    // const userGeolocation = inject('geolocation')
+  setup(props: any) {
+    const router = useRouter();
+    const goDetail = (id: number) => {
+      router.push(`/detail/${id}`);
+    };
 
     return {
-      userThemeColor,
-      // updateThemeColor,
-      ...props
-      // userLocation,
-      // userGeolocation
+      ...props,
+      goDetail
     };
   }
 });
 </script>
+
+<style lang="stylus">
+.list-item
+  border: 1px dashed #DCDFE6;
+  padding: 4px 8px;
+  margin: 0 0 8px;
+</style>

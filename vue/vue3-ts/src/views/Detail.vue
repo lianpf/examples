@@ -1,63 +1,109 @@
 <template>
-  <div class="about">
-    <h1>{{ state.pageTitle }}</h1>
+  <div class="page-detail">
+    <div>
+      <button @click="goBack">返回</button>
+      &nbsp;&nbsp;
+      <span>detail</span>
+    </div>
+    <h1>{{ state.title }}</h1>
     <div>
       <h4>Movie message</h4>
-      <p>唯一标识: {{ state.movieMsg.id }}</p>
-      <p>观影类别: {{ state.movieMsg.kind }}</p>
-      <p>观影数量: {{ state.movieMsg.count }}</p>
+      <p>唯一标识: {{ state.movieId }}</p>
+      <p>观影类别: {{ state.kind }}</p>
+      <p>
+        观影数量:
+        <span class="views-count">{{ state.count }}</span>
+      </p>
+    </div>
+    <div>
+      <h5>操作区</h5>
+      <div>
+        <span>点击次数: {{ state.actionCount }}</span>
+        &nbsp;&nbsp;
+        <button @click="() => addViewsCount()">增加浏览量</button>
+      </div>
     </div>
   </div>
 </template>
 
-<script>
-import { defineComponent, reactive, ref, computed, watch } from 'vue'
-import { useRoute, useRouter } from 'vue-router'
+<script lang="ts">
+import { defineComponent, reactive, computed, watch, onMounted } from "vue";
+import { useRoute, useRouter } from "vue-router";
 export default defineComponent({
   name: "Detail",
-  steup() {
+  setup() {
     const route = useRoute();
     const router = useRouter();
 
-    const movieId = ref(route.query.id)
+    /**
+     * @name: computed
+     * @desc: 核心流程
+     * @author: lianpf
+     * @date: 2021.03.06
+     * */
+    const movieId = computed(() => route.params.id);
     const state = reactive({
-      pageTitle: 'This is an detail page',
-      kind: 'life',
-      count: 0,
-      movieMsg: {
-        id: 1
-      }
-    })
+      title: "This is an detail page",
+      kind: "life",
+      count: 100,
+      actionCount: 0,
+      movieId
+    });
 
-    // computed
-    const params = computed(() => ({
-      kind: state.kind,
-      count: state.count + 1
-    }))
-    
-    watch(movieId, (newVal, oldVal) => {
-      console.log('--watch-movieId--', newVal);
-      console.log('--watch-oldVal--', oldVal)
-      if (newVal !== oldVal) {
-        state.movieMsg = getDetail(params)
+    /**
+     * @name: watch
+     * @desc: 核心流程
+     * @author: lianpf
+     * @date: 2021.03.06
+     * */
+    watch(
+      () => state.actionCount,
+      () => {
+        console.log("--watch--");
+        state.count = state.count + 1;
       }
-    })
+    );
 
-    const getDetail = async (params) => {
-      return {
-        id: movieId,
-        ...params
-      }
-    }
-    // methods
-    const onBack = () => {
-      router.replace('/list/2')
-    }
+    /**
+     * @name: method
+     * @desc: 核心流程
+     * @author: lianpf
+     * @date: 2021.03.06
+     * */
+    const addViewsCount = () => {
+      state.actionCount = state.actionCount + 1;
+    };
+
+    /**
+     * @name: 生命周期钩子
+     * @desc: 核心流程
+     * @author: lianpf
+     * @date: 2021.03.06
+     * */
+    onMounted(() => {
+      console.log("111");
+    });
+
+    /**
+     * @name: router - 返回上层
+     * @desc: 核心流程
+     * @author: lianpf
+     * @date: 2021.03.06
+     * */
+    const goBack = () => {
+      router.replace("/list");
+    };
 
     return {
       state,
-      onBack
-    }
+      addViewsCount,
+      goBack
+    };
   }
 });
 </script>
+
+<style lang="stylus">
+.views-count
+  color: #FF5151;
+</style>

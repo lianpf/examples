@@ -19,14 +19,14 @@ const routes: Array<RouteRecordRaw> = [
   },
   {
     path: "/list",
-    name: "MovieDetail",
+    name: "List",
     component: () => import("../views/List.vue")
   },
   {
     path: "/detail/:id",
     name: "Detail",
-    // 懒加载
-    component: () => import(/* webpackChunkName: "detail" */ "../views/Detail.vue")
+    // 懒加载 webpackChunkName: "detail"
+    component: () => import("../views/Detail.vue")
   }
 ];
 

@@ -32,6 +32,7 @@ interface ListByStatusData {
   pageSize: number;
 }
 interface MovieItem {
+  id: string;
   name: string;
   desc: string;
 }
@@ -43,20 +44,30 @@ export default defineComponent({
     TestInject
   },
   setup() {
-    // let list: Array<MovieItem> = [];
     let list: Array<MovieItem> = [];
+    /**
+     * @name: reactive
+     * @desc: 核心流程
+     * @author: lianpf
+     * @date: 2021.03.06
+     * */
     let state = reactive({
       title: "List Page",
       count: 0,
       total: 0,
-      list
+      list,
+      provideStatus: false
     });
 
     const params = computed(() => ({
       count: state.count + 1
     }));
-
-    // 异步请求函数
+    /**
+     * @name: 异步请求函数 & 泛型函数
+     * @desc: 核心流程
+     * @author: lianpf
+     * @date: 2021.03.06
+     * */
     type FnType = (x: number, y: number) => Promise<Array<MovieItem>>;
     const getInitList: FnType = (page, pageSize) => {
       console.log(`--req-params-page:${page}-pageSize:${pageSize}--`);
@@ -64,14 +75,17 @@ export default defineComponent({
         try {
           let res: Array<MovieItem> = [
             {
+              id: "100",
               name: "list-item-001",
               desc: "001-001-001-001"
             },
             {
+              id: "200",
               name: "list-item-002",
               desc: "002-002-002-002"
             },
             {
+              id: "300",
               name: "list-item-003",
               desc: "003-003-003-003"
             }
@@ -99,16 +113,20 @@ export default defineComponent({
     onMounted(async () => {
       await asyncFlow();
     });
-    // 提供&注入
-    const parentColor = ref("red");
-    // 父组件通过 provide 函数向子级组件共享数据（不限层级）
+    /**
+     * @name: 依赖注入 —— 父组件通过 provide 函数向子级组件共享数据（不限层级）
+     * @desc: 核心功能
+     * @author: lianpf
+     * @date: 2021.03.06
+     * */
+    const parentColor = ref("salmon");
     // provide('要共享的数据名称', 被共享的数据)
     provide("themeColor", readonly(parentColor));
-
     const updateThemeColor = () => {
-      console.log("--change-color--");
-      parentColor.value = "hahaha";
+      state.provideStatus = !state.provideStatus;
+      parentColor.value = state.provideStatus ? "skyblue" : "salmon";
     };
+    // 父组件 function update “注入”的值
     provide("updateThemeColor", updateThemeColor);
     provide("location", "North Pole");
     provide("geolocation", {
@@ -127,6 +145,7 @@ export default defineComponent({
 
 <style lang="stylus">
 .page-list-content
+  margin-top: 16px;
   border: 1px dashed #000;
   padding: 12px;
 </style>

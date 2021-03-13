@@ -1,4 +1,5 @@
 # vue3-ts
+> 参考: https://github.com/lhz960904/movie-trailer
 
 ## Project setup
 ```

@@ -22,9 +22,8 @@ export default defineComponent({
   setup() {
     const tabList = [
       { name: "首页", link: "/" },
-      { name: "关于", link: "/about" },
       { name: "列表", link: "/list" },
-      { name: "详情", link: "/detail/123" }
+      { name: "关于", link: "/about" }
     ];
 
     return {

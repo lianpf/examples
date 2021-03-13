@@ -26,3 +26,13 @@ export interface Performer {
   avatar: string;
   name: string;
 }
+
+export interface ListByStatusData {
+  page: number;
+  pageSize: number;
+}
+export interface MovieItem {
+  id: string;
+  name: string;
+  desc: string;
+}

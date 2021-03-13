@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import HeaderNav from "./components/HeaderNav";
+import HeaderNav from "./components/HeaderNav.vue";
 
 export default {
   name: "App",
@@ -23,9 +23,19 @@ export default {
   height: 100vh;
   .layout-content
     position: absolute;
-    top: $headerHeight;
-    bottom: 0;
+    padding: 0 24px 0 24px;
+    top: 60px;
     width: 100%;
     > div
       height: 100%;
+      margin-bottom: 8px;
+    button
+      background: #409EFF;
+      margin: 8px 0 4px;
+      padding: 4px 8px;
+      line-height: 1.5;
+      border: none;
+      outline: none;
+      border-radius: 5px;
+      color: #fff;
 </style>

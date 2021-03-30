@@ -16,7 +16,19 @@ module.exports = appInfo => {
   config.keys = appInfo.name + '_1617081780536_9800';
 
   // add your middleware config here
-  config.middleware = [];
+  config.middleware = [
+    'robot'
+  ];
+  config.robot = { // 拦截机器人 configs: 对应UA
+    ua: [
+      /Baidu/i,
+    ]
+  };
+
+  /* ---------------------组件个性化配置------------------ */
+  config.request = {
+    serverUrl: 'https://httpbin.org',
+  };
 
   // add your user config here
   const userConfig = {

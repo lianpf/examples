@@ -12,6 +12,11 @@ module.exports = appInfo => {
    **/
   const config = exports = {};
 
+  config.cors = {
+    origin: 'http://localhost:8088', //匹配规则  域名+端口  *则为全匹配
+    allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH'
+  };
+
   // 用于cookie签名密钥，应更改为你自己的 Cookie 安全字符串
   config.keys = appInfo.name + '_1617081780536_9800';
 
@@ -25,9 +30,16 @@ module.exports = appInfo => {
     ]
   };
 
+  config.baseDir = 'http://10.10.130.143:7001'
   /* ---------------------组件个性化配置------------------ */
   config.request = {
     serverUrl: 'https://httpbin.org',
+  };
+  // 暂时关闭csrf防御，不然影响post请求测试
+  config.security = {
+    csrf: {
+      enable: false,
+    },
   };
 
   // add your user config here

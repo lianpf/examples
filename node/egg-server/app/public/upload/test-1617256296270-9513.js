@@ -6,11 +6,3 @@
 export function aa {
     console.log('111')
 }
-
-export function bb {
-    console.log('222444')
-}
-
-export function cc {
-    console.log('333444')
-}

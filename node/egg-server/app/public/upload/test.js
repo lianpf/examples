@@ -12,5 +12,5 @@ export function bb {
 }
 
 export function cc {
-    console.log('333444')
+    console.log('3334446')
 }

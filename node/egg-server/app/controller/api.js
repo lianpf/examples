@@ -4,6 +4,7 @@ const Controller = require('egg').Controller;
 const fs = require('fs');
 const path = require('path');
 const Stream = require('stream');
+const sendToWormhole = require('stream-wormhole');
 // const awaitWriteStream = require('await-stream-ready').write;
 
 class ApiController extends Controller {
@@ -54,12 +55,11 @@ class ApiController extends Controller {
     try {
       // 写入文件
       // await awaitStreamReady(stream.pipe(writeStream));
-      // writeStream.write(jsCode, 'UTF8')
       readableStream.pipe(writeStream)
       // fs.writeFileSync(target, jsCode, { flag: 'w' })
     } catch (err) {
       // 必须将上传的文件流消费掉，要不然浏览器响应会卡死
-      // await sendToWormhole(stream);
+      await sendToWormhole(writeStream);
       throw err;
     }
     let staticCodePath = this.config.serverBaseDir +  '/public/upload/' + filename;

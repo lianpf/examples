@@ -3,7 +3,9 @@
 物料中台 Node server
 
 ## technology
-* `egg: 2.15.1+` 
+* `egg 2.15.1+`
+* `mysql 8.0.17`
+* `egg-mysql 3.0.0+`
 
 ## QuickStart
 

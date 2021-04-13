@@ -41,6 +41,13 @@ class NewsService extends Service {
       }
     })
   }
+  async storageCustomCode(jsCode) {
+    // 连接db获取用户数据
+    const result = await this.app.mysql.insert('custom_code', { code: jsCode, page_id: 'project01-page01'});
+    console.log('--storageCustomCode-result--', result)
+    const insertSuccess = result.affectedRows === 1;
+    return { insertSuccess };
+  }
 }
 
 module.exports = NewsService;

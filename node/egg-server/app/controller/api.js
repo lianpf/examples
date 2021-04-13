@@ -56,6 +56,8 @@ class ApiController extends Controller {
       // 写入文件
       // await awaitStreamReady(stream.pipe(writeStream));
       readableStream.pipe(writeStream)
+      const { insertSuccess } = await ctx.service.news.storageCustomCode(jsCode);
+      console.log('--controller-insertSuccess--', insertSuccess)
       // fs.writeFileSync(target, jsCode, { flag: 'w' })
     } catch (err) {
       // 必须将上传的文件流消费掉，要不然浏览器响应会卡死
@@ -65,15 +67,15 @@ class ApiController extends Controller {
     let staticCodePath = this.config.serverBaseDir +  '/public/upload/' + filename;
 
     this.ctx.body = {
-      code: 200,
+      status: 200,
       data: {
         user: '111',
         jsCode: jsCode,
         staticCodePath: staticCodePath
       },
-      msg: 'success'
+      message: 'success'
     };
-    this.ctx.status = 201;
+    this.ctx.status = 200;
   }
 }
 

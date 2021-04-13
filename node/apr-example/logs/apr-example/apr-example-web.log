@@ -1,0 +1,139 @@
+2021-04-12 15:43:42,962 ERROR 40198 [-/::1/-/8ms GET /] nodejs.Error: Please set config.keys first
+    at Application.get keys [as keys] (/gitHub/lian/apr/node_modules/egg/lib/application.js:266:15)
+    at Object.get cookies [as cookies] (/gitHub/lian/apr/node_modules/egg/app/extend/context.js:22:66)
+    at Object.get [egg-security#CSRF_SECRET] (/gitHub/lian/apr/node_modules/egg-security/app/extend/context.js:91:35)
+    at Object.ensureCsrfSecret (/gitHub/lian/apr/node_modules/egg-security/app/extend/context.js:104:13)
+    at csrf (/gitHub/lian/apr/node_modules/egg-security/lib/middlewares/csrf.js:15:11)
+    at dispatch (/gitHub/lian/apr/node_modules/egg-security/node_modules/koa-compose/index.js:47:32)
+    at /gitHub/lian/apr/node_modules/egg-security/node_modules/koa-compose/index.js:39:12
+    at dispatch (/gitHub/lian/apr/node_modules/koa/node_modules/koa-compose/index.js:47:32)
+    at session (/gitHub/lian/apr/node_modules/koa-session/index.js:41:13)
+    at dispatch (/gitHub/lian/apr/node_modules/koa/node_modules/koa-compose/index.js:47:32)
+
+pid: 40198
+hostname: lianpfdeiMac.local
+
+2021-04-12 15:45:57,681 ERROR 40322 [-/::1/-/6ms GET /] nodejs.TypeError: ctx.render is not a function
+    at HomeController.render (/gitHub/lian/examples/node/apr-example/app/controller/home.js:12:15)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+
+pid: 40322
+hostname: lianpfdeiMac.local
+
+2021-04-12 15:46:04,750 ERROR 40322 [-/::1/-/1ms GET /] nodejs.TypeError: ctx.render is not a function
+    at HomeController.render (/gitHub/lian/examples/node/apr-example/app/controller/home.js:12:15)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+
+pid: 40322
+hostname: lianpfdeiMac.local
+
+2021-04-12 15:46:04,973 ERROR 40322 [-/::1/-/1ms GET /] nodejs.TypeError: ctx.render is not a function
+    at HomeController.render (/gitHub/lian/examples/node/apr-example/app/controller/home.js:12:15)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+
+pid: 40322
+hostname: lianpfdeiMac.local
+
+2021-04-12 15:47:27,522 ERROR 40385 [-/::1/-/6ms GET /] nodejs.TypeError: ctx.render is not a function
+    at HomeController.render (/gitHub/lian/examples/node/apr-example/app/controller/home.js:12:15)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+
+pid: 40385
+hostname: lianpfdeiMac.local
+
+2021-04-12 15:47:30,103 ERROR 40385 [-/::1/-/1ms GET /] nodejs.TypeError: ctx.render is not a function
+    at HomeController.render (/gitHub/lian/examples/node/apr-example/app/controller/home.js:12:15)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+
+pid: 40385
+hostname: lianpfdeiMac.local
+
+2021-04-12 15:48:01,860 ERROR 40411 [-/::1/-/8ms GET /] nodejs.TypeError: ctx.render is not a function
+    at HomeController.render (/gitHub/lian/examples/node/apr-example/app/controller/home.js:13:15)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+
+pid: 40411
+hostname: lianpfdeiMac.local
+
+2021-04-12 15:49:38,851 ERROR 40445 [-/::1/-/12ms GET /] nodejs.TypeError: ctx.render is not a function
+    at HomeController.render (/gitHub/lian/examples/node/apr-example/app/controller/home.js:14:15)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+
+pid: 40445
+hostname: lianpfdeiMac.local
+
+2021-04-12 16:01:13,752 ERROR 40974 [-/::1/-/8ms GET /] nodejs.TypeError: ctx.render is not a function
+    at HomeController.render (/gitHub/lian/examples/node/apr-example/app/controller/home.js:14:15)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+
+pid: 40974
+hostname: lianpfdeiMac.local
+
+2021-04-12 16:01:13,960 ERROR 40974 [-/::1/-/1ms GET /] nodejs.TypeError: ctx.render is not a function
+    at HomeController.render (/gitHub/lian/examples/node/apr-example/app/controller/home.js:14:15)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+
+pid: 40974
+hostname: lianpfdeiMac.local
+
+2021-04-12 16:06:55,909 ERROR 41413 [-/::1/-/8ms GET /] nodejs.TypeError: ctx.render is not a function
+    at HomeController.home (/gitHub/lian/examples/node/apr-example/app/controller/home.js:14:15)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+
+pid: 41413
+hostname: lianpfdeiMac.local
+
+2021-04-12 16:16:40,875 ERROR 41776 [-/::1/-/7ms GET /] nodejs.TypeError: ctx.render is not a function
+    at HomeController.home (/gitHub/lian/examples/node/apr-example/app/controller/home.js:14:15)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+
+pid: 41776
+hostname: lianpfdeiMac.local
+
+2021-04-12 16:27:41,361 ERROR 42154 [-/::1/-/7ms GET /] nodejs.TypeError: ctx.render is not a function
+    at HomeController.home (/gitHub/lian/examples/node/apr-example/app/controller/home.js:14:15)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+
+pid: 42154
+hostname: lianpfdeiMac.local
+
+2021-04-12 16:37:25,291 ERROR 42362 [-/::1/-/8ms GET /] nodejs.TypeError: ctx.render is not a function
+    at HomeController.index (/gitHub/lian/examples/node/apr-example/app/controller/home.js:14:15)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+
+pid: 42362
+hostname: lianpfdeiMac.local
+
+2021-04-12 16:45:51,441 ERROR 42682 [-/::1/-/11ms GET /] nodejs.AssertionError [ERR_ASSERTION]: Can't find ViewEngine "nunjucks"
+    at ContextView.[contextView#getViewEngine] (/gitHub/lian/apr/node_modules/egg-view/lib/context_view.js:88:5)
+    at ContextView.[contextView#render] (/gitHub/lian/apr/node_modules/egg-view/lib/context_view.js:69:39)
+generatedMessage: false
+name: "AssertionError [ERR_ASSERTION]"
+code: "ERR_ASSERTION"
+actual: undefined
+expected: true
+operator: "=="
+pid: 42682
+hostname: lianpfdeiMac.local
+
+2021-04-12 17:01:54,743 ERROR 43130 [-/::1/-/7ms GET /] nodejs.ReferenceError: jsCode is not defined
+    at HomeController.index (/gitHub/lian/examples/node/apr-example/app/controller/home.js:12:61)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+
+pid: 43130
+hostname: lianpfdeiMac.local
+
+2021-04-12 17:03:07,559 ERROR 43177 [-/::1/-/9ms GET /] nodejs.ReferenceError: jsCode is not defined
+    at HomeController.index (/gitHub/lian/examples/node/apr-example/app/controller/home.js:12:61)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+
+pid: 43177
+hostname: lianpfdeiMac.local
+
+2021-04-12 17:03:09,119 ERROR 43177 [-/::1/-/1ms GET /] nodejs.ReferenceError: jsCode is not defined
+    at HomeController.index (/gitHub/lian/examples/node/apr-example/app/controller/home.js:12:61)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+
+pid: 43177
+hostname: lianpfdeiMac.local
+

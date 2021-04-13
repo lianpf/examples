@@ -1,0 +1,291 @@
+{
+  "keys": "/gitHub/lian/examples/node/apr-example/config/config.default.js",
+  "mysql": {
+    "client": {
+      "host": "/gitHub/lian/examples/node/apr-example/config/config.default.js",
+      "port": "/gitHub/lian/examples/node/apr-example/config/config.default.js",
+      "user": "/gitHub/lian/examples/node/apr-example/config/config.default.js",
+      "password": "/gitHub/lian/examples/node/apr-example/config/config.default.js",
+      "database": "/gitHub/lian/examples/node/apr-example/config/config.default.js"
+    },
+    "app": "/gitHub/lian/examples/node/apr-example/config/config.default.js",
+    "agent": "/gitHub/lian/examples/node/apr-example/config/config.default.js",
+    "default": {
+      "database": "/gitHub/lian/apr/node_modules/egg-mysql/config/config.default.js",
+      "connectionLimit": "/gitHub/lian/apr/node_modules/egg-mysql/config/config.default.js"
+    }
+  },
+  "session": {
+    "maxAge": "/gitHub/lian/apr/node_modules/egg-session/config/config.default.js",
+    "key": "/gitHub/lian/apr/node_modules/egg-session/config/config.default.js",
+    "httpOnly": "/gitHub/lian/apr/node_modules/egg-session/config/config.default.js",
+    "encrypt": "/gitHub/lian/apr/node_modules/egg-session/config/config.default.js",
+    "logValue": "/gitHub/lian/apr/node_modules/egg-session/config/config.default.js"
+  },
+  "security": {
+    "domainWhiteList": "/gitHub/lian/apr/node_modules/egg-security/config/config.default.js",
+    "protocolWhiteList": "/gitHub/lian/apr/node_modules/egg-security/config/config.default.js",
+    "defaultMiddleware": "/gitHub/lian/apr/node_modules/egg-security/config/config.default.js",
+    "csrf": {
+      "enable": "/gitHub/lian/apr/node_modules/egg-security/config/config.default.js",
+      "type": "/gitHub/lian/apr/node_modules/egg-security/config/config.default.js",
+      "ignoreJSON": "/gitHub/lian/apr/node_modules/egg-security/config/config.default.js",
+      "useSession": "/gitHub/lian/apr/node_modules/egg-security/config/config.default.js",
+      "cookieName": "/gitHub/lian/apr/node_modules/egg-security/config/config.default.js",
+      "sessionName": "/gitHub/lian/apr/node_modules/egg-security/config/config.default.js",
+      "headerName": "/gitHub/lian/apr/node_modules/egg-security/config/config.default.js",
+      "bodyName": "/gitHub/lian/apr/node_modules/egg-security/config/config.default.js",
+      "queryName": "/gitHub/lian/apr/node_modules/egg-security/config/config.default.js",
+      "refererWhiteList": "/gitHub/lian/apr/node_modules/egg-security/config/config.default.js"
+    },
+    "xframe": {
+      "enable": "/gitHub/lian/apr/node_modules/egg-security/config/config.default.js",
+      "value": "/gitHub/lian/apr/node_modules/egg-security/config/config.default.js"
+    },
+    "hsts": {
+      "enable": "/gitHub/lian/apr/node_modules/egg-security/config/config.local.js",
+      "maxAge": "/gitHub/lian/apr/node_modules/egg-security/config/config.default.js",
+      "includeSubdomains": "/gitHub/lian/apr/node_modules/egg-security/config/config.default.js"
+    },
+    "dta": {
+      "enable": "/gitHub/lian/apr/node_modules/egg-security/config/config.default.js"
+    },
+    "methodnoallow": {
+      "enable": "/gitHub/lian/apr/node_modules/egg-security/config/config.default.js"
+    },
+    "noopen": {
+      "enable": "/gitHub/lian/apr/node_modules/egg-security/config/config.default.js"
+    },
+    "nosniff": {
+      "enable": "/gitHub/lian/apr/node_modules/egg-security/config/config.default.js"
+    },
+    "referrerPolicy": {
+      "enable": "/gitHub/lian/apr/node_modules/egg-security/config/config.default.js",
+      "value": "/gitHub/lian/apr/node_modules/egg-security/config/config.default.js"
+    },
+    "xssProtection": {
+      "enable": "/gitHub/lian/apr/node_modules/egg-security/config/config.default.js",
+      "value": "/gitHub/lian/apr/node_modules/egg-security/config/config.default.js"
+    },
+    "csp": {
+      "enable": "/gitHub/lian/apr/node_modules/egg-security/config/config.default.js",
+      "policy": "/gitHub/lian/apr/node_modules/egg-security/config/config.default.js"
+    },
+    "ssrf": {
+      "ipBlackList": "/gitHub/lian/apr/node_modules/egg-security/config/config.default.js",
+      "checkAddress": "/gitHub/lian/apr/node_modules/egg-security/config/config.default.js"
+    }
+  },
+  "helper": {
+    "shtml": "/gitHub/lian/apr/node_modules/egg-security/config/config.default.js"
+  },
+  "jsonp": {
+    "limit": "/gitHub/lian/apr/node_modules/egg-jsonp/config/config.default.js",
+    "callback": "/gitHub/lian/apr/node_modules/egg-jsonp/config/config.default.js",
+    "csrf": "/gitHub/lian/apr/node_modules/egg-jsonp/config/config.default.js"
+  },
+  "onerror": {
+    "errorPageUrl": "/gitHub/lian/apr/node_modules/egg-onerror/config/config.default.js",
+    "appErrorFilter": "/gitHub/lian/apr/node_modules/egg-onerror/config/config.default.js",
+    "templatePath": "/gitHub/lian/apr/node_modules/egg-onerror/config/config.default.js"
+  },
+  "i18n": {
+    "defaultLocale": "/gitHub/lian/apr/node_modules/egg-i18n/config/config.default.js",
+    "dirs": "/gitHub/lian/apr/node_modules/egg-i18n/config/config.default.js",
+    "queryField": "/gitHub/lian/apr/node_modules/egg-i18n/config/config.default.js",
+    "cookieField": "/gitHub/lian/apr/node_modules/egg-i18n/config/config.default.js",
+    "cookieDomain": "/gitHub/lian/apr/node_modules/egg-i18n/config/config.default.js",
+    "cookieMaxAge": "/gitHub/lian/apr/node_modules/egg-i18n/config/config.default.js"
+  },
+  "watcher": {
+    "type": "/gitHub/lian/apr/node_modules/egg-watcher/config/config.local.js",
+    "eventSources": {
+      "default": "/gitHub/lian/apr/node_modules/egg-watcher/config/config.default.js",
+      "development": "/gitHub/lian/apr/node_modules/egg-watcher/config/config.default.js"
+    }
+  },
+  "customLogger": {
+    "scheduleLogger": {
+      "consoleLevel": "/gitHub/lian/apr/node_modules/egg-schedule/config/config.default.js",
+      "file": "/gitHub/lian/apr/node_modules/egg-schedule/config/config.default.js"
+    }
+  },
+  "schedule": {
+    "directory": "/gitHub/lian/apr/node_modules/egg-schedule/config/config.default.js"
+  },
+  "multipart": {
+    "mode": "/gitHub/lian/apr/node_modules/egg-multipart/config/config.default.js",
+    "autoFields": "/gitHub/lian/apr/node_modules/egg-multipart/config/config.default.js",
+    "defaultCharset": "/gitHub/lian/apr/node_modules/egg-multipart/config/config.default.js",
+    "fieldNameSize": "/gitHub/lian/apr/node_modules/egg-multipart/config/config.default.js",
+    "fieldSize": "/gitHub/lian/apr/node_modules/egg-multipart/config/config.default.js",
+    "fields": "/gitHub/lian/apr/node_modules/egg-multipart/config/config.default.js",
+    "fileSize": "/gitHub/lian/apr/node_modules/egg-multipart/config/config.default.js",
+    "files": "/gitHub/lian/apr/node_modules/egg-multipart/config/config.default.js",
+    "fileExtensions": "/gitHub/lian/apr/node_modules/egg-multipart/config/config.default.js",
+    "whitelist": "/gitHub/lian/apr/node_modules/egg-multipart/config/config.default.js",
+    "tmpdir": "/gitHub/lian/apr/node_modules/egg-multipart/config/config.default.js",
+    "cleanSchedule": {
+      "cron": "/gitHub/lian/apr/node_modules/egg-multipart/config/config.default.js"
+    }
+  },
+  "development": {
+    "watchDirs": "/gitHub/lian/apr/node_modules/egg-development/config/config.default.js",
+    "ignoreDirs": "/gitHub/lian/apr/node_modules/egg-development/config/config.default.js",
+    "fastReady": "/gitHub/lian/apr/node_modules/egg-development/config/config.default.js",
+    "reloadOnDebug": "/gitHub/lian/apr/node_modules/egg-development/config/config.default.js",
+    "overrideDefault": "/gitHub/lian/apr/node_modules/egg-development/config/config.default.js",
+    "overrideIgnore": "/gitHub/lian/apr/node_modules/egg-development/config/config.default.js"
+  },
+  "logrotator": {
+    "filesRotateByHour": "/gitHub/lian/apr/node_modules/egg-logrotator/config/config.default.js",
+    "hourDelimiter": "/gitHub/lian/apr/node_modules/egg-logrotator/config/config.default.js",
+    "filesRotateBySize": "/gitHub/lian/apr/node_modules/egg-logrotator/config/config.default.js",
+    "maxFileSize": "/gitHub/lian/apr/node_modules/egg-logrotator/config/config.default.js",
+    "maxFiles": "/gitHub/lian/apr/node_modules/egg-logrotator/config/config.default.js",
+    "rotateDuration": "/gitHub/lian/apr/node_modules/egg-logrotator/config/config.default.js",
+    "maxDays": "/gitHub/lian/apr/node_modules/egg-logrotator/config/config.default.js"
+  },
+  "static": {
+    "prefix": "/gitHub/lian/apr/node_modules/egg-static/config/config.default.js",
+    "dir": "/gitHub/lian/apr/node_modules/egg-static/config/config.default.js",
+    "dynamic": "/gitHub/lian/apr/node_modules/egg-static/config/config.default.js",
+    "preload": "/gitHub/lian/apr/node_modules/egg-static/config/config.default.js",
+    "buffer": "/gitHub/lian/apr/node_modules/egg-static/config/config.default.js",
+    "maxFiles": "/gitHub/lian/apr/node_modules/egg-static/config/config.default.js"
+  },
+  "view": {
+    "root": "/gitHub/lian/apr/node_modules/egg-view/config/config.default.js",
+    "cache": "/gitHub/lian/apr/node_modules/egg-view/config/config.local.js",
+    "defaultExtension": "/gitHub/lian/apr/node_modules/egg-view/config/config.default.js",
+    "defaultViewEngine": "/gitHub/lian/apr/config/config.default.js",
+    "mapping": "/gitHub/lian/apr/node_modules/egg-view/config/config.default.js"
+  },
+  "nunjucks": {
+    "autoescape": "/gitHub/lian/apr/node_modules/egg-view-nunjucks/config/config.default.js",
+    "throwOnUndefined": "/gitHub/lian/apr/node_modules/egg-view-nunjucks/config/config.default.js",
+    "trimBlocks": "/gitHub/lian/apr/node_modules/egg-view-nunjucks/config/config.default.js",
+    "lstripBlocks": "/gitHub/lian/apr/node_modules/egg-view-nunjucks/config/config.default.js",
+    "cache": "/gitHub/lian/apr/node_modules/egg-view-nunjucks/config/config.local.js"
+  },
+  "env": "/gitHub/lian/apr/node_modules/egg/config/config.default.js",
+  "name": "/gitHub/lian/apr/node_modules/egg/config/config.default.js",
+  "cookies": "/gitHub/lian/apr/node_modules/egg/config/config.default.js",
+  "proxy": "/gitHub/lian/apr/node_modules/egg/config/config.default.js",
+  "maxIpsCount": "/gitHub/lian/apr/node_modules/egg/config/config.default.js",
+  "maxProxyCount": "/gitHub/lian/apr/node_modules/egg/config/config.default.js",
+  "protocolHeaders": "/gitHub/lian/apr/node_modules/egg/config/config.default.js",
+  "ipHeaders": "/gitHub/lian/apr/node_modules/egg/config/config.default.js",
+  "hostHeaders": "/gitHub/lian/apr/node_modules/egg/config/config.default.js",
+  "pkg": {
+    "name": "/gitHub/lian/apr/node_modules/egg/config/config.default.js",
+    "version": "/gitHub/lian/apr/node_modules/egg/config/config.default.js",
+    "dependencies": {
+      "apr": "/gitHub/lian/apr/node_modules/egg/config/config.default.js"
+    },
+    "devDependencies": {
+      "egg-bin": "/gitHub/lian/apr/node_modules/egg/config/config.default.js",
+      "egg-mock": "/gitHub/lian/apr/node_modules/egg/config/config.default.js"
+    },
+    "scripts": {
+      "dev": "/gitHub/lian/apr/node_modules/egg/config/config.default.js",
+      "test": "/gitHub/lian/apr/node_modules/egg/config/config.default.js"
+    },
+    "egg": {
+      "framework": "/gitHub/lian/apr/node_modules/egg/config/config.default.js"
+    }
+  },
+  "baseDir": "/gitHub/lian/apr/node_modules/egg/config/config.default.js",
+  "HOME": "/gitHub/lian/apr/node_modules/egg/config/config.default.js",
+  "rundir": "/gitHub/lian/apr/node_modules/egg/config/config.default.js",
+  "dump": {
+    "ignore": "/gitHub/lian/apr/node_modules/egg/config/config.default.js"
+  },
+  "confusedConfigurations": {
+    "bodyparser": "/gitHub/lian/apr/node_modules/egg/config/config.default.js",
+    "notFound": "/gitHub/lian/apr/node_modules/egg/config/config.default.js",
+    "sitefile": "/gitHub/lian/apr/node_modules/egg/config/config.default.js",
+    "middlewares": "/gitHub/lian/apr/node_modules/egg/config/config.default.js",
+    "httpClient": "/gitHub/lian/apr/node_modules/egg/config/config.default.js"
+  },
+  "notfound": {
+    "pageUrl": "/gitHub/lian/apr/node_modules/egg/config/config.default.js"
+  },
+  "siteFile": {
+    "/favicon.ico": "/gitHub/lian/apr/node_modules/egg/config/config.default.js"
+  },
+  "bodyParser": {
+    "enable": "/gitHub/lian/apr/node_modules/egg/config/config.default.js",
+    "encoding": "/gitHub/lian/apr/node_modules/egg/config/config.default.js",
+    "formLimit": "/gitHub/lian/apr/node_modules/egg/config/config.default.js",
+    "jsonLimit": "/gitHub/lian/apr/node_modules/egg/config/config.default.js",
+    "textLimit": "/gitHub/lian/apr/node_modules/egg/config/config.default.js",
+    "strict": "/gitHub/lian/apr/node_modules/egg/config/config.default.js",
+    "queryString": {
+      "arrayLimit": "/gitHub/lian/apr/node_modules/egg/config/config.default.js",
+      "depth": "/gitHub/lian/apr/node_modules/egg/config/config.default.js",
+      "parameterLimit": "/gitHub/lian/apr/node_modules/egg/config/config.default.js"
+    },
+    "onerror": "/gitHub/lian/apr/node_modules/egg/config/config.default.js"
+  },
+  "logger": {
+    "dir": "/gitHub/lian/apr/node_modules/egg/config/config.default.js",
+    "encoding": "/gitHub/lian/apr/node_modules/egg/config/config.default.js",
+    "env": "/gitHub/lian/apr/node_modules/egg/config/config.default.js",
+    "level": "/gitHub/lian/apr/node_modules/egg/config/config.default.js",
+    "consoleLevel": "/gitHub/lian/apr/node_modules/egg/config/config.default.js",
+    "disableConsoleAfterReady": "/gitHub/lian/apr/node_modules/egg/config/config.default.js",
+    "outputJSON": "/gitHub/lian/apr/node_modules/egg/config/config.default.js",
+    "buffer": "/gitHub/lian/apr/node_modules/egg/config/config.default.js",
+    "appLogName": "/gitHub/lian/apr/node_modules/egg/config/config.default.js",
+    "coreLogName": "/gitHub/lian/apr/node_modules/egg/config/config.default.js",
+    "agentLogName": "/gitHub/lian/apr/node_modules/egg/config/config.default.js",
+    "errorLogName": "/gitHub/lian/apr/node_modules/egg/config/config.default.js",
+    "coreLogger": {
+      "consoleLevel": "/gitHub/lian/apr/node_modules/egg/config/config.local.js"
+    },
+    "allowDebugAtProd": "/gitHub/lian/apr/node_modules/egg/config/config.default.js"
+  },
+  "httpclient": {
+    "enableDNSCache": "/gitHub/lian/apr/node_modules/egg/config/config.default.js",
+    "dnsCacheLookupInterval": "/gitHub/lian/apr/node_modules/egg/config/config.default.js",
+    "dnsCacheMaxLength": "/gitHub/lian/apr/node_modules/egg/config/config.default.js",
+    "request": {
+      "timeout": "/gitHub/lian/apr/node_modules/egg/config/config.default.js"
+    },
+    "httpAgent": {
+      "keepAlive": "/gitHub/lian/apr/node_modules/egg/config/config.default.js",
+      "freeSocketTimeout": "/gitHub/lian/apr/node_modules/egg/config/config.default.js",
+      "maxSockets": "/gitHub/lian/apr/node_modules/egg/config/config.default.js",
+      "maxFreeSockets": "/gitHub/lian/apr/node_modules/egg/config/config.default.js"
+    },
+    "httpsAgent": {
+      "keepAlive": "/gitHub/lian/apr/node_modules/egg/config/config.default.js",
+      "freeSocketTimeout": "/gitHub/lian/apr/node_modules/egg/config/config.default.js",
+      "maxSockets": "/gitHub/lian/apr/node_modules/egg/config/config.default.js",
+      "maxFreeSockets": "/gitHub/lian/apr/node_modules/egg/config/config.default.js"
+    }
+  },
+  "meta": {
+    "enable": "/gitHub/lian/apr/node_modules/egg/config/config.default.js",
+    "logging": "/gitHub/lian/apr/node_modules/egg/config/config.default.js"
+  },
+  "coreMiddleware": "/gitHub/lian/apr/node_modules/egg/config/config.default.js",
+  "workerStartTimeout": "/gitHub/lian/apr/node_modules/egg/config/config.default.js",
+  "serverTimeout": "/gitHub/lian/apr/node_modules/egg/config/config.default.js",
+  "cluster": {
+    "listen": {
+      "path": "/gitHub/lian/apr/node_modules/egg/config/config.default.js",
+      "port": "/gitHub/lian/apr/node_modules/egg/config/config.default.js",
+      "hostname": "/gitHub/lian/apr/node_modules/egg/config/config.default.js"
+    }
+  },
+  "clusterClient": {
+    "maxWaitTime": "/gitHub/lian/apr/node_modules/egg/config/config.default.js",
+    "responseTimeout": "/gitHub/lian/apr/node_modules/egg/config/config.default.js"
+  },
+  "onClientError": "/gitHub/lian/apr/node_modules/egg/config/config.default.js",
+  "test": {
+    "key": "/gitHub/lian/apr/config/config.default.js"
+  }
+}

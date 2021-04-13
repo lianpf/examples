@@ -6,6 +6,7 @@ const path = require('path');
 const Stream = require('stream');
 const sendToWormhole = require('stream-wormhole');
 // const awaitWriteStream = require('await-stream-ready').write;
+const { getObj } = require('../utils/utils.js');
 
 /**
  * @desc: Page 相关api
@@ -28,19 +29,31 @@ class PageController extends Controller {
   }
   async detail() {
     const { ctx } = this;
-    const page = ctx.query.page || 1;
     const { pageId: page_id, appId: app_id } = ctx.query;
-    let params = {id, tag}
-    const dataList = await ctx.service.page.list(page)
-    const userInfo = await ctx.service.page.detail(params)
+    let params = {app_id, page_id}
+    let pageDetail, configsSchema, jsCode
+    try {
+      pageDetail = await ctx.service.page.detail(params)
+      if (pageDetail.length > 0) {
+        const { schema_id, custom_code_id } = pageDetail[0]
+        console.log('-pageDetail-schema_id-', schema_id)
+        console.log('-pageDetail-custom_code_id-', custom_code_id)
+        configsSchema = await ctx.service.page.schema({schema_id, page_id})
+        jsCode = await ctx.service.page.customCode({custom_code_id, page_id})
+      }
+    } catch(e) {
+      console.log(e)
+    }
     ctx.body = {
       code: 200,
       data: {
-        user: userInfo,
-        list: dataList
+        detail: pageDetail.length > 0 ? getObj(pageDetail) : {},
+        schema: configsSchema.length > 0 ? getObj(configsSchema).schema_content : {},
+        customCode: jsCode.length > 0 ? getObj(jsCode).code : {}
       },
       msg: 'success'
     };
+    ctx.status = 200;
   }
   async upload() {
     const { ctx } = this;

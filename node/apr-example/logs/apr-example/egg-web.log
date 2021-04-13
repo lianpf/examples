@@ -834,3 +834,20 @@
 2021-04-12 17:19:00,525 INFO 43938 [egg-mysql] instance[0] status OK, rds currentTime: Mon Apr 12 2021 17:19:00 GMT+0800 (GMT+08:00)
 2021-04-12 17:19:00,530 INFO 43938 [egg:core] dump config after ready, 2ms
 2021-04-12 17:25:15,227 INFO 43938 [egg-view-nunjucks] loading templates from ["/gitHub/lian/examples/node/apr-example/app/view"]
+2021-04-13 10:24:00,423 INFO 57112 [egg:logger] init all loggers with options: {"dir":"/gitHub/lian/examples/node/apr-example/logs/apr-example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"apr-example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2021-04-13 10:24:00,447 INFO 57112 [egg-multipart] stream mode enable
+2021-04-13 10:24:00,447 INFO 57112 [egg-mysql] connecting root@127.0.0.1:3306/localTestDB
+2021-04-13 10:24:00,541 INFO 57112 [egg-static] starting static serve /public/ -> /gitHub/lian/examples/node/apr-example/app/public
+2021-04-13 10:24:00,543 INFO 57112 [egg-security] use csrf middleware
+2021-04-13 10:24:00,544 INFO 57112 [egg-security] use methodnoallow middleware
+2021-04-13 10:24:00,544 INFO 57112 [egg-security] use noopen middleware
+2021-04-13 10:24:00,544 INFO 57112 [egg-security] use nosniff middleware
+2021-04-13 10:24:00,545 INFO 57112 [egg-security] use xssProtection middleware
+2021-04-13 10:24:00,545 INFO 57112 [egg-security] use xframe middleware
+2021-04-13 10:24:00,545 INFO 57112 [egg-security] use dta middleware
+2021-04-13 10:24:00,545 INFO 57112 [egg-security] compose 7 middlewares into one security middleware
+2021-04-13 10:24:00,555 INFO 57112 [egg:core] dump config after load, 4ms
+2021-04-13 10:24:00,588 INFO 57112 [egg-watcher:application] watcher start success
+2021-04-13 10:24:00,638 INFO 57112 [egg-mysql] instance[0] status OK, rds currentTime: Tue Apr 13 2021 10:24:00 GMT+0800 (GMT+08:00)
+2021-04-13 10:24:00,644 INFO 57112 [egg:core] dump config after ready, 4ms
+2021-04-13 10:24:12,439 INFO 57112 [egg-view-nunjucks] loading templates from ["/gitHub/lian/examples/node/apr-example/app/view"]

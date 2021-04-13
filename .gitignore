@@ -4,9 +4,16 @@ node_modules
 # 所有 project 构建的 production package
 /dist
 
+
+/*.log
+
 # misc
 .DS_Store
 npm-debug.log*
 .idea
 package-lock.json
 /*.zip
+
+
+# 针对项目
+node/apr-example/run/

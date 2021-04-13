@@ -1,6 +1,6 @@
 // app/service/news.js
 
-const Service = require('apr').Service;
+const Service = require('@lianpf/apr').Service;
 
 class CodeService extends Service {
   async storageCustomCode() {

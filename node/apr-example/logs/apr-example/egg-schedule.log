@@ -199,3 +199,9 @@
 2021-04-12 17:19:00,427 INFO 43938 [egg-schedule]: register schedule /gitHub/lian/apr/node_modules/egg-multipart/app/schedule/clean_tmpdir.js
 2021-04-12 17:19:00,427 INFO 43938 [egg-schedule]: register schedule /gitHub/lian/apr/node_modules/egg-logrotator/app/schedule/clean_log.js
 2021-04-12 17:19:00,427 INFO 43938 [egg-schedule]: register schedule /gitHub/lian/apr/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2021-04-13 10:24:00,651 INFO 57111 [Timer] /gitHub/lian/examples/node/apr-example/node_modules/egg-multipart/app/schedule/clean_tmpdir.js next time will execute after 65159353ms at 2021-04-14 04:30:00.004
+2021-04-13 10:24:00,651 INFO 57111 [Timer] /gitHub/lian/examples/node/apr-example/node_modules/egg-logrotator/app/schedule/clean_log.js next time will execute after 48959349ms at 2021-04-14 00:00:00.000
+2021-04-13 10:24:00,651 INFO 57111 [Timer] /gitHub/lian/examples/node/apr-example/node_modules/egg-logrotator/app/schedule/rotate_by_file.js next time will execute after 48960349ms at 2021-04-14 00:00:01.000
+2021-04-13 10:24:00,445 INFO 57112 [egg-schedule]: register schedule /gitHub/lian/examples/node/apr-example/node_modules/egg-multipart/app/schedule/clean_tmpdir.js
+2021-04-13 10:24:00,445 INFO 57112 [egg-schedule]: register schedule /gitHub/lian/examples/node/apr-example/node_modules/egg-logrotator/app/schedule/clean_log.js
+2021-04-13 10:24:00,445 INFO 57112 [egg-schedule]: register schedule /gitHub/lian/examples/node/apr-example/node_modules/egg-logrotator/app/schedule/rotate_by_file.js

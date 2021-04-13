@@ -89,27 +89,27 @@
     "onerror": {
       "errorPageUrl": "",
       "appErrorFilter": null,
-      "templatePath": "/gitHub/lian/apr/node_modules/egg-onerror/lib/onerror_page.mustache"
+      "templatePath": "/gitHub/lian/examples/node/apr-example/node_modules/egg-onerror/lib/onerror_page.mustache"
     },
     "i18n": {
       "defaultLocale": "en_US",
       "dirs": [
-        "/gitHub/lian/apr/node_modules/egg-session/config/locales",
-        "/gitHub/lian/apr/node_modules/egg-security/config/locales",
-        "/gitHub/lian/apr/node_modules/egg-jsonp/config/locales",
-        "/gitHub/lian/apr/node_modules/egg-onerror/config/locales",
-        "/gitHub/lian/apr/node_modules/egg-i18n/config/locales",
-        "/gitHub/lian/apr/node_modules/egg-watcher/config/locales",
-        "/gitHub/lian/apr/node_modules/egg-schedule/config/locales",
-        "/gitHub/lian/apr/node_modules/egg-multipart/config/locales",
-        "/gitHub/lian/apr/node_modules/egg-development/config/locales",
-        "/gitHub/lian/apr/node_modules/egg-logrotator/config/locales",
-        "/gitHub/lian/apr/node_modules/egg-static/config/locales",
-        "/gitHub/lian/apr/node_modules/egg-view/config/locales",
-        "/gitHub/lian/apr/node_modules/egg-mysql/config/locales",
-        "/gitHub/lian/apr/node_modules/egg-view-nunjucks/config/locales",
-        "/gitHub/lian/apr/node_modules/egg/config/locales",
-        "/gitHub/lian/apr/config/locales",
+        "/gitHub/lian/examples/node/apr-example/node_modules/egg-session/config/locales",
+        "/gitHub/lian/examples/node/apr-example/node_modules/egg-security/config/locales",
+        "/gitHub/lian/examples/node/apr-example/node_modules/egg-jsonp/config/locales",
+        "/gitHub/lian/examples/node/apr-example/node_modules/egg-onerror/config/locales",
+        "/gitHub/lian/examples/node/apr-example/node_modules/egg-i18n/config/locales",
+        "/gitHub/lian/examples/node/apr-example/node_modules/egg-watcher/config/locales",
+        "/gitHub/lian/examples/node/apr-example/node_modules/egg-schedule/config/locales",
+        "/gitHub/lian/examples/node/apr-example/node_modules/egg-multipart/config/locales",
+        "/gitHub/lian/examples/node/apr-example/node_modules/egg-development/config/locales",
+        "/gitHub/lian/examples/node/apr-example/node_modules/egg-logrotator/config/locales",
+        "/gitHub/lian/examples/node/apr-example/node_modules/egg-static/config/locales",
+        "/gitHub/lian/examples/node/apr-example/node_modules/egg-view/config/locales",
+        "/gitHub/lian/examples/node/apr-example/node_modules/egg-mysql/config/locales",
+        "/gitHub/lian/examples/node/apr-example/node_modules/egg-view-nunjucks/config/locales",
+        "/gitHub/lian/examples/node/apr-example/node_modules/egg/config/locales",
+        "/gitHub/lian/examples/node/apr-example/node_modules/@lianpf/apr/config/locales",
         "/gitHub/lian/examples/node/apr-example/config/locales"
       ],
       "queryField": "locale",
@@ -121,8 +121,8 @@
     "watcher": {
       "type": "development",
       "eventSources": {
-        "default": "/gitHub/lian/apr/node_modules/egg-watcher/lib/event-sources/default",
-        "development": "/gitHub/lian/apr/node_modules/egg-watcher/lib/event-sources/development"
+        "default": "/gitHub/lian/examples/node/apr-example/node_modules/egg-watcher/lib/event-sources/default",
+        "development": "/gitHub/lian/examples/node/apr-example/node_modules/egg-watcher/lib/event-sources/development"
       }
     },
     "customLogger": {
@@ -220,7 +220,7 @@
       "name": "apr-example",
       "version": "1.0.0",
       "dependencies": {
-        "apr": "../../../apr"
+        "@lianpf/apr": "^1.0.0"
       },
       "devDependencies": {
         "egg-bin": "^4.3.5",
@@ -231,7 +231,7 @@
         "test": "egg-bin test"
       },
       "egg": {
-        "framework": "apr"
+        "framework": "@lianpf/apr"
       }
     },
     "baseDir": "/gitHub/lian/examples/node/apr-example",
@@ -365,8 +365,8 @@
         "jsonp"
       ],
       "env": [],
-      "from": "/gitHub/lian/apr/node_modules/egg/config/plugin.js",
-      "path": "/gitHub/lian/apr/node_modules/egg-onerror",
+      "from": "/gitHub/lian/examples/node/apr-example/node_modules/egg/config/plugin.js",
+      "path": "/gitHub/lian/examples/node/apr-example/node_modules/egg-onerror",
       "version": "2.1.0"
     },
     "session": {
@@ -376,8 +376,8 @@
       "dependencies": [],
       "optionalDependencies": [],
       "env": [],
-      "from": "/gitHub/lian/apr/node_modules/egg/config/plugin.js",
-      "path": "/gitHub/lian/apr/node_modules/egg-session",
+      "from": "/gitHub/lian/examples/node/apr-example/node_modules/egg/config/plugin.js",
+      "path": "/gitHub/lian/examples/node/apr-example/node_modules/egg-session",
       "version": "3.3.0"
     },
     "i18n": {
@@ -387,8 +387,8 @@
       "dependencies": [],
       "optionalDependencies": [],
       "env": [],
-      "from": "/gitHub/lian/apr/node_modules/egg/config/plugin.js",
-      "path": "/gitHub/lian/apr/node_modules/egg-i18n",
+      "from": "/gitHub/lian/examples/node/apr-example/node_modules/egg/config/plugin.js",
+      "path": "/gitHub/lian/examples/node/apr-example/node_modules/egg-i18n",
       "version": "2.1.1"
     },
     "watcher": {
@@ -398,8 +398,8 @@
       "dependencies": [],
       "optionalDependencies": [],
       "env": [],
-      "from": "/gitHub/lian/apr/node_modules/egg/config/plugin.js",
-      "path": "/gitHub/lian/apr/node_modules/egg-watcher",
+      "from": "/gitHub/lian/examples/node/apr-example/node_modules/egg/config/plugin.js",
+      "path": "/gitHub/lian/examples/node/apr-example/node_modules/egg-watcher",
       "version": "3.1.1"
     },
     "multipart": {
@@ -411,8 +411,8 @@
         "schedule"
       ],
       "env": [],
-      "from": "/gitHub/lian/apr/node_modules/egg/config/plugin.js",
-      "path": "/gitHub/lian/apr/node_modules/egg-multipart",
+      "from": "/gitHub/lian/examples/node/apr-example/node_modules/egg/config/plugin.js",
+      "path": "/gitHub/lian/examples/node/apr-example/node_modules/egg-multipart",
       "version": "2.10.3"
     },
     "security": {
@@ -424,8 +424,8 @@
         "session"
       ],
       "env": [],
-      "from": "/gitHub/lian/apr/node_modules/egg/config/plugin.js",
-      "path": "/gitHub/lian/apr/node_modules/egg-security",
+      "from": "/gitHub/lian/examples/node/apr-example/node_modules/egg/config/plugin.js",
+      "path": "/gitHub/lian/examples/node/apr-example/node_modules/egg-security",
       "version": "2.8.0"
     },
     "development": {
@@ -439,8 +439,8 @@
       "env": [
         "local"
       ],
-      "from": "/gitHub/lian/apr/node_modules/egg/config/plugin.js",
-      "path": "/gitHub/lian/apr/node_modules/egg-development",
+      "from": "/gitHub/lian/examples/node/apr-example/node_modules/egg/config/plugin.js",
+      "path": "/gitHub/lian/examples/node/apr-example/node_modules/egg-development",
       "version": "2.7.0"
     },
     "logrotator": {
@@ -452,8 +452,8 @@
       ],
       "optionalDependencies": [],
       "env": [],
-      "from": "/gitHub/lian/apr/node_modules/egg/config/plugin.js",
-      "path": "/gitHub/lian/apr/node_modules/egg-logrotator",
+      "from": "/gitHub/lian/examples/node/apr-example/node_modules/egg/config/plugin.js",
+      "path": "/gitHub/lian/examples/node/apr-example/node_modules/egg-logrotator",
       "version": "3.1.0"
     },
     "schedule": {
@@ -463,8 +463,8 @@
       "dependencies": [],
       "optionalDependencies": [],
       "env": [],
-      "from": "/gitHub/lian/apr/node_modules/egg/config/plugin.js",
-      "path": "/gitHub/lian/apr/node_modules/egg-schedule",
+      "from": "/gitHub/lian/examples/node/apr-example/node_modules/egg/config/plugin.js",
+      "path": "/gitHub/lian/examples/node/apr-example/node_modules/egg-schedule",
       "version": "3.6.6"
     },
     "static": {
@@ -474,8 +474,8 @@
       "dependencies": [],
       "optionalDependencies": [],
       "env": [],
-      "from": "/gitHub/lian/apr/node_modules/egg/config/plugin.js",
-      "path": "/gitHub/lian/apr/node_modules/egg-static",
+      "from": "/gitHub/lian/examples/node/apr-example/node_modules/egg/config/plugin.js",
+      "path": "/gitHub/lian/examples/node/apr-example/node_modules/egg-static",
       "version": "2.2.0"
     },
     "jsonp": {
@@ -487,8 +487,8 @@
         "security"
       ],
       "env": [],
-      "from": "/gitHub/lian/apr/node_modules/egg/config/plugin.js",
-      "path": "/gitHub/lian/apr/node_modules/egg-jsonp",
+      "from": "/gitHub/lian/examples/node/apr-example/node_modules/egg/config/plugin.js",
+      "path": "/gitHub/lian/examples/node/apr-example/node_modules/egg-jsonp",
       "version": "2.0.0"
     },
     "view": {
@@ -498,8 +498,8 @@
       "dependencies": [],
       "optionalDependencies": [],
       "env": [],
-      "from": "/gitHub/lian/apr/node_modules/egg/config/plugin.js",
-      "path": "/gitHub/lian/apr/node_modules/egg-view",
+      "from": "/gitHub/lian/examples/node/apr-example/node_modules/egg/config/plugin.js",
+      "path": "/gitHub/lian/examples/node/apr-example/node_modules/egg-view",
       "version": "2.1.3"
     },
     "mysql": {
@@ -510,7 +510,7 @@
       "optionalDependencies": [],
       "env": [],
       "from": "/gitHub/lian/examples/node/apr-example/config/plugin.js",
-      "path": "/gitHub/lian/apr/node_modules/egg-mysql",
+      "path": "/gitHub/lian/examples/node/apr-example/node_modules/egg-mysql",
       "version": "3.0.0"
     },
     "nunjucks": {
@@ -524,7 +524,7 @@
       "optionalDependencies": [],
       "env": [],
       "from": "/gitHub/lian/examples/node/apr-example/config/plugin.js",
-      "path": "/gitHub/lian/apr/node_modules/egg-view-nunjucks",
+      "path": "/gitHub/lian/examples/node/apr-example/node_modules/egg-view-nunjucks",
       "version": "2.3.0"
     }
   }

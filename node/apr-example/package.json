@@ -2,7 +2,7 @@
   "name": "apr-example",
   "version": "1.0.0",
   "dependencies": {
-    "apr": "../../../apr"
+    "@lianpf/apr": "^1.0.0"
   },
   "devDependencies": {
     "egg-bin": "^4.3.5",
@@ -13,6 +13,6 @@
     "test": "egg-bin test"
   },
   "egg": {
-    "framework": "apr"
+    "framework": "@lianpf/apr"
   }
 }

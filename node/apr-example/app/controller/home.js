@@ -1,7 +1,7 @@
 'use strict';
 
 // 引入框架
-const Controller = require('apr').Controller;
+const Controller = require('@lianpf/apr').Controller;
 
 class HomeController extends Controller {
   async index() {

@@ -1,7 +1,1 @@
-/** 
- *test: 排查问题 
- */
-
-function click2 {
-    console.log('6542345897')
-}
+function click2(n){return n.firstLongName+n.anotherLongName}console.log("6542345897",click2({firstLongName:3,anotherLongName:5}));

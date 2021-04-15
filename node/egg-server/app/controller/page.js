@@ -91,14 +91,24 @@ class PageController extends Controller {
           await this.service.page.insertCustomCode({page_id, custom_code_id, filename, code: jsCode})
           // console.log('--111-result--', result)
         }
+        // 压缩 js code
+        const uglifyRes = UglifyJS.minify(jsCode, {
+          keep_fnames: true
+        });
+        if (uglifyRes.error) {
+          console.log('--uglifyRes--', uglifyRes)
+          ctx.body = {
+            status: 400,
+            data: {},
+            message: '参数错误'
+          };
+          ctx.status = 400;
+          return;
+        }
         // 更新文件
         const readableStream = new Stream.Readable()
         readableStream._read = () => {}
-        // console.log('--jsCode--', jsCode)
-        // const testCode = "function click2 {    console.log('6542345897')}"
-        // var uglifyRes = UglifyJS.minify(testCode);
-        // console.log('--uglifyRes--', uglifyRes)
-        readableStream.push(jsCode)
+        readableStream.push(uglifyRes.code)
         // 写入路径
         const fileParentCatalog = 'app/public/upload/'
         const target = path.join(this.config.fileBaseDir, fileParentCatalog, filename);
@@ -107,8 +117,8 @@ class PageController extends Controller {
         try {
           // 写入文件
           readableStream.pipe(writeStream)
-          var testCode = fs.readFileSync("/gitHub/lian/examples/node/egg-server/app/public/upload/test.js", "utf8");
-          console.log('testCode', testCode)
+          // var testCode = fs.readFileSync("/gitHub/lian/examples/node/egg-server/app/public/upload/test.js", "utf8");
+          // console.log('testCode', testCode)
         } catch (err) {
           // 必须将上传的文件流消费掉，要不然浏览器响应会卡死
           await sendToWormhole(writeStream);

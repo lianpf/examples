@@ -2,7 +2,9 @@ const Service = require('egg').Service;
 
 class AppService extends Service {
   async list() {
-    const result = await this.app.mysql.get('applications');
+    const result = await this.app.mysql.select('applications', {
+      columns: ['app_id', 'app_name', 'app_desc', 'create_date']
+    });
     return result
   }
   async detail(appId) {

@@ -6,41 +6,8 @@
 const moment = require('moment');
 exports.relativeTime = time => moment(new Date(time * 1000)).fromNow();
 
-// 处理成功响应
-exports.success = ({ ctx, res = null, message = '请求成功' })=> {
-  ctx.body = {
-    status: 200,
-    code: 0,
-    data: res,
-    message
-  }
-  ctx.status = 200
-}
-
-// 处理失败（客户端）
-exports.clientError = ({ ctx, res = null, message = '参数缺失' })=> {
-  ctx.body = {
-    status: 400,
-    code: 0,
-    data: res,
-    message
-  }
-  ctx.status = 400
-}
-
-// 处理失败（客户端）
-exports.serverError = ({ ctx, res = null, message = '服务端异常' })=> {
-  ctx.body = {
-    status: 500,
-    code: 0,
-    data: res,
-    message
-  }
-  ctx.status = 500
-}
-
-// 自定义 response
-exports.customRes = ({ ctx, res = null, message = '服务端异常', status = 200, code = 0 })=> {
+// 统一处理 response
+const setResponse = ({ ctx, res = null, message = 'success', status = 200, code = 0 }) => {
   ctx.body = {
     status,
     code,
@@ -48,4 +15,10 @@ exports.customRes = ({ ctx, res = null, message = '服务端异常', status = 20
     message
   }
   ctx.status = status
+}
+exports.handleRes = {
+  'success': ({ ctx, res = null, message = '请求成功' }) => setResponse({ctx, res, message}), // 处理成功响应
+  'clientError': ({ ctx, res = null, message = '参数缺失' }) => setResponse({ ctx, res, message}), // 处理失败（客户端）
+  'serverError': ({ ctx, res = null, message = '服务端异常' }) => setResponse({ ctx, res, message}), // 处理失败（服务端）
+  'customRes': ({ ctx, res = null, message = '服务端异常', status = 200, code = 0 }) => setResponse({ ctx, res, message, status, code}) // 自定义 response
 }

@@ -20,14 +20,18 @@ class PageController extends Controller {
     const { appId: app_id = '' } = ctx.query;
     let params = {app_id}
     const pageList = await ctx.service.page.list(params)
-    ctx.body = {
-      status: 200,
-      data: {
+    ctx.helper.handleRes.success({ctx, res: {
         list: pageList
-      },
-      message: 'success'
-    };
-    ctx.status = 200;
+      }
+    })
+    // ctx.body = {
+    //   status: 200,
+    //   data: {
+    //     list: pageList
+    //   },
+    //   message: 'success'
+    // };
+    // ctx.status = 200;
   }
   async detail() {
     const { ctx } = this;
@@ -44,7 +48,7 @@ class PageController extends Controller {
     } catch(e) {
       console.log(e)
     }
-    ctx.helper.success({
+    ctx.helper.handleRes.success({
       ctx,
       res: {
         detail: pageDetail.length > 0 ? getObj(pageDetail) : {},
@@ -64,12 +68,7 @@ class PageController extends Controller {
     const { ctx } = this;
     const { jsCode, pageId: page_id } = ctx.request.body;
     if (!page_id) {
-      ctx.status = 200;
-      ctx.body = {
-        status: 200,
-        data: {},
-        message: '非法参数'
-      }
+      ctx.helper.handleRes.clientError({ctx, res: {}, message: '非法参数'})
     } else {
       let pageDetail = await this.service.page.detail({page_id})
       if (pageDetail.length > 0) {
@@ -104,12 +103,13 @@ class PageController extends Controller {
         });
         if (uglifyRes.error) {
           // console.log('--uglifyRes--', uglifyRes)
-          ctx.body = {
-            status: 400,
-            data: {},
-            message: '参数错误'
-          };
-          ctx.status = 400;
+          ctx.helper.handleRes.clientError({ctx, res: {}, message: '参数错误'})
+          // ctx.body = {
+          //   status: 400,
+          //   data: {},
+          //   message: '参数错误'
+          // };
+          // ctx.status = 400;
           return;
         }
         // 更新文件
@@ -132,22 +132,29 @@ class PageController extends Controller {
           throw err;
         }
         let staticCodePath = this.config.serverBaseDir +  '/public/upload/' + filename;
-        ctx.body = {
-          status: 200,
-          data: {
+        ctx.helper.handleRes.success({
+          ctx,
+          res: {
             jsCode: jsCode,
             staticCodePath: staticCodePath
           },
           message: '上传成功'
-        };
-        ctx.status = 200
+        })
+        // ctx.body = {
+        //   status: 200,
+        //   data: {
+        //   },
+        //   message: ''
+        // };
+        // ctx.status = 200
       } else {
-        ctx.status = 200;
-        ctx.body = {
-          status: 200,
-          data: {},
-          message: 'pageId非法，无当前页面!'
-        }
+        ctx.helper.handleRes.serverError({ctx, message: 'pageId非法，无当前页面!'})
+        // ctx.status = 200;
+        // ctx.body = {
+        //   status: 200,
+        //   data: {},
+        //   message: 'pageId非法，无当前页面!'
+        // }
       }
     }
   }

@@ -16,13 +16,13 @@ class AppController extends Controller {
   async list() {
     const { ctx } = this;
     const appList = await ctx.service.app.list()
-    ctx.helper.success({ctx, res: appList, message: appList.length > 0 ? 'success' : '当前无应用，请先创建应用！'})
+    ctx.helper.handleRes.success({ctx, res: appList, message: appList.length > 0 ? 'success' : '当前无应用，请先创建应用！'})
   }
   async detail() {
     const { ctx } = this;
     const { appId: app_id = '' } = ctx.query;
     const appDetail = await ctx.service.app.detail(app_id)
-    ctx.helper.success({ctx, res: getObj(appDetail), message: appDetail.length > 0 ? 'success' : '不存在该页面'})
+    ctx.helper.handleRes.success({ctx, res: getObj(appDetail), message: appDetail.length > 0 ? 'success' : '不存在该页面'})
   }
 }
 

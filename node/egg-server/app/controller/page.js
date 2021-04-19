@@ -8,6 +8,7 @@ const sendToWormhole = require('stream-wormhole');
 // const awaitWriteStream = require('await-stream-ready').write;
 const { getObj, getUuid } = require('../utils/utils.js');
 const UglifyJS = require("uglify-js");
+const babel = require("@babel/core");
 
 /**
  * @desc: Page 相关api
@@ -37,24 +38,20 @@ class PageController extends Controller {
       pageDetail = await ctx.service.page.detail(params)
       if (pageDetail.length > 0) {
         const { schema_id, custom_code_id } = pageDetail[0]
-        console.log('-pageDetail-schema_id-', schema_id)
-        console.log('-pageDetail-custom_code_id-', custom_code_id)
         configsSchema = await ctx.service.page.schema({schema_id, page_id})
         jsCode = await ctx.service.page.customCode({custom_code_id, page_id})
       }
     } catch(e) {
       console.log(e)
     }
-    ctx.body = {
-      code: 200,
-      data: {
+    ctx.helper.success({
+      ctx,
+      res: {
         detail: pageDetail.length > 0 ? getObj(pageDetail) : {},
         schema: configsSchema.length > 0 ? getObj(configsSchema).schema_content : {},
         customCode: jsCode.length > 0 ? getObj(jsCode).code : {}
-      },
-      msg: 'success'
-    };
-    ctx.status = 200;
+      }
+    })
   }
   /**
    * @desc: 上传自定义js code
@@ -91,12 +88,22 @@ class PageController extends Controller {
           await this.service.page.insertCustomCode({page_id, custom_code_id, filename, code: jsCode})
           // console.log('--111-result--', result)
         }
+        // 编译js
+        const compileRes = babel.transformSync(jsCode, {
+          presets: [
+            [
+              '@babel/preset-env'
+            ]
+          ],
+          code: true
+        });
+        // console.log('--compileRes.code--', compileRes.code)
         // 压缩 js code
-        const uglifyRes = UglifyJS.minify(jsCode, {
+        const uglifyRes = UglifyJS.minify(compileRes.code, {
           keep_fnames: true
         });
         if (uglifyRes.error) {
-          console.log('--uglifyRes--', uglifyRes)
+          // console.log('--uglifyRes--', uglifyRes)
           ctx.body = {
             status: 400,
             data: {},
@@ -133,7 +140,7 @@ class PageController extends Controller {
           },
           message: '上传成功'
         };
-        ctx.status = 200;
+        ctx.status = 200
       } else {
         ctx.status = 200;
         ctx.body = {

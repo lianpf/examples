@@ -1,1 +1,1 @@
-function click2(n){return n.firstLongName+n.anotherLongName}console.log("6542345897",click2({firstLongName:3,anotherLongName:5}));
+"use strict";var clickTest2=function clickTest2(c){return c.aa+c.bb};function clickTest(){return clickTest2({aa:3,bb:5})}console.log("test-code",clickTest());

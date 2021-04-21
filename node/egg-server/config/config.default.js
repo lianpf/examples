@@ -23,13 +23,17 @@ module.exports = appInfo => {
 
   // add your middleware config here
   config.middleware = [
-    'robot'
+    'robot',
+    'dbORM'
   ];
   config.robot = { // 拦截机器人 configs: 对应UA
     ua: [
       /Baidu/i,
     ]
   };
+  config.dbORM = { // ORM configs
+    open: true
+  }
 
   // server 物理地址根路径
   config.fileBaseDir = '/gitHub/lian/examples/node/egg-server'

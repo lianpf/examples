@@ -1,0 +1,15 @@
+/**
+ * @desc: 针对egg-mysql获取到的数据，无法从下划线字段转为驼峰（除非使用原生sql）
+ * @path: app/middleware/dbORM.js
+ * @date: 2021-04-20
+ * @author: lianpf
+ */
+ module.exports = (options, app) => {
+  // options === app.config.dbORM
+  return async function robotMiddleware(ctx, next) {
+    await next();
+    if (options.open) {
+      ctx.body.data = ctx.helper.handleORM(ctx.body.data)
+    }
+  }
+};

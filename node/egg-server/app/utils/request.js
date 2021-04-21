@@ -1,7 +1,10 @@
 // DB select结果，数组转对象
 const request = (ctx, options) => {
   // 读配置
-  const { serverUrl } = this.config.request;
+  let { serverUrl } = this.config.request;
+  if (Object.prototype.hasOwnProperty.call(options, 'origin') && options.origin) {
+    serverUrl = options.origin
+  }
   const {
     url = '/post',
     method = 'get',

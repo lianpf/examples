@@ -75,6 +75,15 @@ class PageService extends Service {
     console.log('--insertCustomCode-conn--', conn)
     // return result
   }
+  async update() {
+    const { page_id } = params;
+    const result = await this.app.mysql.update('pages', params, {
+      where: {
+        page_id
+      }
+    });
+    return result
+  }
 }
 
 module.exports = PageService;

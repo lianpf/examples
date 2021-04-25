@@ -51,7 +51,7 @@ const ormHandleAction = (data) => {
   } else {
     for (let key in data) {
       // 基础类型 + Date
-      if (typeof data[key] !== 'object' || (typeof data[key] === 'object' && data[key] instanceof Date)) {
+      if (typeof data[key] !== 'object' || (typeof data[key] === 'object' && (data[key] instanceof Date || data[key] === null))) {
         humpData[toHump(key)] = data[key]
       } else {
         humpData[toHump(key)] = ormHandleAction(data[key])

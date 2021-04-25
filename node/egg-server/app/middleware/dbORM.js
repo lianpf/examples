@@ -6,7 +6,7 @@
  */
  module.exports = (options, app) => {
   // options === app.config.dbORM
-  return async function robotMiddleware(ctx, next) {
+  return async function dbORMMiddleware(ctx, next) {
     await next();
     if (options.open) {
       ctx.body.data = ctx.helper.handleORM(ctx.body.data)

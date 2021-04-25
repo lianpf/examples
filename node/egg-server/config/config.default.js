@@ -38,7 +38,7 @@ module.exports = appInfo => {
   // server 物理地址根路径
   config.fileBaseDir = '/gitHub/lian/examples/node/egg-server'
   // server 根路径
-  config.serverBaseDir = 'http://10.10.130.143:7001'
+  config.serverBaseDir = 'http://10.10.139.24:7001'
   /* ---------------------组件个性化配置------------------ */
   config.request = {
     serverUrl: 'https://httpbin.org',

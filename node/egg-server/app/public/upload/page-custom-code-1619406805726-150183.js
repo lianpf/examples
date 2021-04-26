@@ -1,0 +1,1 @@
+"use strict";function click5(n){return n.firstLongName+n.anotherLongName}console.log("211-6542345897",click2({firstLongName:3,anotherLongName:5}));

@@ -43,6 +43,7 @@ class CommonService extends Service {
       schema_id
     }
   }
+  // 获取 custom-code
   async getCustomCode(params) {
     let { custom_code_id } = params;
     const result = await this.app.mysql.select('custom_code', {
@@ -52,6 +53,63 @@ class CommonService extends Service {
       columns: ['custom_code_id', 'filename', 'page_id']
     });
     return result
+  }
+  // 1.更新/插入 custom-code 2.同步信息到assets/pages
+  async updateCodeSyncPage(params) {
+    const { insertNewCode, page_id, custom_code_id, filename, code, type } = params;
+    // 创建事务是一个异步的过程，所以这里要加上 await，变量conn才能拿到创建好的事务
+    const conn = await this.app.mysql.beginTransaction();
+    // console.log('--insertCustomCode-000-conn--', conn)
+    let codeResult = false
+    let pageResult = false
+    try {
+      if (insertNewCode) {
+        const result = await conn.insert('custom_code', {
+          custom_code_id,
+          code,
+          filename,
+          page_id
+        })
+        codeResult = result.affectedRows === 1
+      } else {
+        const result = await conn.update('custom_code', {
+          code,
+          filename,
+          page_id
+        }, {
+          where: {
+            custom_code_id
+          }
+        })
+        codeResult = result.affectedRows === 1
+      }
+      if (type === 'page') {
+        const result = await conn.update('pages', {
+          custom_code_id
+        }, {
+          where: {
+            page_id
+          }
+        })
+        pageResult = result.affectedRows === 1
+      } else if (type === 'assets') {
+        const result = await conn.update('assets', {
+          custom_code_id
+        }, {
+          where: {
+            assets_id: page_id
+          }
+        })
+        pageResult = result.affectedRows === 1
+      }
+      await conn.commit(); // 提交事务
+    } catch (err) {
+      // error, rollback —— 捕获异常后回滚事务！
+      await conn.rollback();
+      throw err;
+    }
+    // console.log('--insertCustomCode-conn--', conn)
+    return codeResult && pageResult
   }
 }
 

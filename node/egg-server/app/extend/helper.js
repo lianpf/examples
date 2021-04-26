@@ -18,8 +18,8 @@ const setResponse = ({ ctx, res = null, message = 'success', status = 200, code 
 }
 exports.handleRes = {
   'success': ({ ctx, res = null, message = '请求成功' }) => setResponse({ctx, res, message}), // 处理成功响应
-  'clientError': ({ ctx, res = null, message = '参数缺失' }) => setResponse({ ctx, res, message}), // 处理失败（客户端）
-  'serverError': ({ ctx, res = null, message = '服务端异常' }) => setResponse({ ctx, res, message}), // 处理失败（服务端）
+  'clientError': ({ ctx, res = null, message = '参数缺失', status = 400, code = 0 }) => setResponse({ ctx, res, message, status, code }), // 处理失败（客户端）
+  'serverError': ({ ctx, res = null, message = '服务端异常', status = 500, code = 0 }) => setResponse({ ctx, res, message, status, code }), // 处理失败（服务端）
   'customRes': ({ ctx, res = null, message = '服务端异常', status = 200, code = 0 }) => setResponse({ ctx, res, message, status, code}) // 自定义 response
 }
 

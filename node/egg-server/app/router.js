@@ -21,5 +21,6 @@ module.exports = app => {
   router.get('/api/assets/brief-info', controller.assets.briefInfo);
   // util模块
   router.post('/api/upload/schema', controller.common.uploadSchema);
+  router.post('/api/upload/code', controller.common.uploadCode);
   router.get('/api/custom-code/detail', controller.common.getCustomCode);
 };

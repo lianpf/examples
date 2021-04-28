@@ -24,7 +24,8 @@ module.exports = appInfo => {
   // add your middleware config here
   config.middleware = [
     'robot',
-    'dbORM'
+    'dbORM',
+    'errorHandler'
   ];
   config.robot = { // 拦截机器人 configs: 对应UA
     ua: [
@@ -33,6 +34,9 @@ module.exports = appInfo => {
   };
   config.dbORM = { // ORM configs
     open: true
+  }
+  config.errorHandler = { // 只对 /api 前缀的 url 路径生效
+    match: '/api',
   }
 
   // server 物理地址根路径
@@ -68,6 +72,20 @@ module.exports = appInfo => {
     app: true,
     // 是否加载到 agent 上，默认关闭
     agent: false,
+  };
+
+  // app/config/config.default.js
+  // swagger文档配置
+  config.swaggerdoc = {
+    dirScanner: './app/controller',
+    apiInfo: {
+      title: 'Node 中间层 api',
+      description: 'example for swagger doc',
+      version: '1.0.0',
+    },
+    schemes: ['http'],
+    enable: true,
+    routerMap: false, // 实验性功能：如果routerMap为true, 允许自动生成API路由
   };
 
   // add your user config here

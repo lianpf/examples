@@ -11,10 +11,23 @@ const { getObj, getUuid, writeStrToFile } = require('../utils/utils.js');
 // const babel = require("@babel/core");
 
 /**
+ * @Controller Common(公共模块)
  * @desc: Common 相关api
  * @children: 1-create 2-list 3-detail 4-update 5-uploadCode
- * */
+ */
+
 class CommonController extends Controller {
+  /**
+   * @summary 上传配置信息Schema
+   * @description 上传Page或assets 配置信息Schema
+   * @Router post /api/upload/schema
+   * @Request body string pageId 页面或者资产 id
+   * @Request body string schemaId 配置Schema id(无则创建，有则更新)
+   * @Request body string schema 配置Schema
+   * @Request body string type page/assets
+   * @Request header string access_token
+   * @Response 200 baseResponse ok
+   */
   async uploadSchema() {
     /** @process
      * 1-检测schemaId是否有效，有则更新，无则新建且返回新的schemaId
@@ -57,6 +70,14 @@ class CommonController extends Controller {
       ctx.helper.handleRes.serverError({ctx, res: null, message: '配置保存失败'})
     }
   }
+  /**
+   * @summary 获取自定义 js code
+   * @description 获取page或assets自定义 js code
+   * @Router get /api/custom-code/detail
+   * @Request query string customCodeId 自定义js Code 上传记录id
+   * @Request header string access_token
+   * @Response 200 baseResponse ok
+   */
   async getCustomCode() {
     const { ctx } = this;
     let { customCodeId: custom_code_id = '' } = ctx.query;
@@ -77,13 +98,24 @@ class CommonController extends Controller {
     ctx.helper.handleRes.success({ctx, res: _data})
   }
   /**
-   * @desc: 上传自定义js code
-   * @step:
-   *  1-查到当前custom_code_id是否存在
-   *  2-若存在，则获取filename，更新文件，更新custom_code，若不存在,则创建filename，insert custom_code，更新pages中custom_code_id
-   *  3-根据type，更新pages或assets
-   * */
+   * @summary 上传自定义 js code
+   * @description 上传自定义 js code
+   * @Router post /api/upload/code
+   * @Request body string pageId 页面或者资产 id
+   * @Request body string customCodeId 自定义js上传记录id(无则创建，有则更新)
+   * @Request body string jsCode 自定义代码
+   * @Request body string type page/assets
+   * @Request header string access_token
+   * @Response 200 baseResponse ok
+   */
   async uploadCode() {
+    /**
+     * @desc: 上传自定义js code
+     * @step:
+     *  1-查到当前custom_code_id是否存在
+     *  2-若存在，则获取filename，更新文件，更新custom_code，若不存在,则创建filename，insert custom_code，更新pages中custom_code_id
+     *  3-根据type，更新pages或assets
+     * */
     const { ctx } = this;
     let { jsCode, pageId: page_id, customCodeId: custom_code_id, type } = ctx.request.body;
     const types = ['page', 'assets']

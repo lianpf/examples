@@ -11,10 +11,19 @@ const UglifyJS = require("uglify-js");
 const babel = require("@babel/core");
 
 /**
+ * @Controller Page（页面）
  * @desc: Page 相关api
  * @children: 1-create 2-list 3-detail 4-update 5-uploadCode
- * */
+ */
 class PageController extends Controller {
+  /**
+   * @summary 根据appId查询app内Page列表
+   * @description 根据appId查询app内Page列表
+   * @Router get /api/page/list
+   * @Request query baseRequest appId description-createUser
+   * @Request header string access_token
+   * @Response 200 baseResponse ok
+   */
   async list() {
     const { ctx } = this;
     const { appId: app_id = '' } = ctx.query;
@@ -33,6 +42,14 @@ class PageController extends Controller {
     // };
     // ctx.status = 200;
   }
+  /**
+   * @summary 根据pageId查询Page详细信息
+   * @description 根据pageId查询Page详细信息
+   * @Router get /api/page/detail
+   * @Request query baseRequest pageId description-createUser
+   * @Request header string access_token
+   * @Response 200 baseResponse ok
+   */
   async detail() {
     const { ctx } = this;
     const { pageId: page_id, appId: app_id } = ctx.query;

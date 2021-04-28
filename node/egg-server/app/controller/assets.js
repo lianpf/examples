@@ -11,10 +11,19 @@ const UglifyJS = require("uglify-js");
 const babel = require("@babel/core");
 
 /**
+ * @Controller Assets（资产）
  * @desc: Assets 相关api
  * @children: 1-create 2-list 3-detail 4-update 5-uploadCode
- * */
+ */
 class AssetsController extends Controller {
+  /**
+   * @summary 根据appId查询应用内资产列表信息
+   * @description 根据appId查询应用内资产列表信息
+   * @Router get /api/assets/list
+   * @Request query baseRequest pageId description-createUser
+   * @Request header string access_token
+   * @Response 200 baseResponse ok
+   */
   async list() {
     const { ctx } = this;
     const { appId: app_id = '' } = ctx.query;
@@ -36,6 +45,16 @@ class AssetsController extends Controller {
       }
     })
   }
+  /**
+   * @summary 创建应用内新的资产
+   * @description 创建应用内新的资产
+   * @Router post /api/assets/create
+   * @Request query baseRequest appId 应用id
+   * @Request query baseRequest assetsName 资产名称
+   * @Request query baseRequest assetsDesc 资产描述
+   * @Request header string access_token
+   * @Response 200 baseResponse ok
+   */
   async create() {
     const { ctx } = this;
     const { appId: app_id = '', assetsName: assets_name, assetsDesc: assets_desc } = ctx.request.body;
@@ -52,6 +71,14 @@ class AssetsController extends Controller {
     }
   }
   // 简要信息
+  /**
+   * @summary 根据 assetsId 查询资产简要信息
+   * @description 根据 assetsId 查询资产简要信息
+   * @Router get /api/assets/brief-info
+   * @Request query string assetsId 资产id
+   * @Request header string access_token
+   * @Response 200 baseResponse ok
+   */
   async briefInfo() {
     const { ctx } = this;
     const { assetsId: assets_id } = ctx.query;

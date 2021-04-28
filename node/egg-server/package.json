@@ -13,6 +13,8 @@
     "egg-cors": "^2.2.3",
     "egg-mysql": "^3.0.0",
     "egg-scripts": "^2.11.0",
+    "egg-swagger-doc": "^2.3.2",
+    "egg-validate": "^2.0.2",
     "moment": "^2.29.1",
     "uglify-js": "^3.13.4"
   },

@@ -28,15 +28,34 @@ class AppController extends Controller {
     ctx.helper.handleRes.success({ctx, res: appList, message: appList.length > 0 ? 'success' : '当前无应用，请先创建应用！'})
   }
   /**
-   * @summary 根据appId查询app详细信息
+   * @summary 创建新的应用
+   * @description 创建新的应用
+   * @Router post /api/app/create
+   * @Request body createAppRequest *body
+   * @Response 200 baseResponse ok
+   */
+   async create() {
+    const { ctx } = this;
+    // 校验参数
+    ctx.validate(ctx.rule.createAppRequest)
+    const { appName: app_name = '', appDesc: app_desc  } = ctx.request.body;
+    const app_id = `${app_name}-${getUuid()}`
+    const appDetail = await ctx.service.app.create({
+      app_id,
+      app_name,
+      app_desc
+    })
+    ctx.helper.handleRes.success({ctx, res: getObj(appDetail), message: appDetail.length > 0 ? 'success' : '不存在该页面'})
+  }
+  /**
+   * @summary 查询app详细信息
    * @description 根据appId查询app详细信息
    * @Router get /api/app/detail
    * @Request query string *appId 应用ID
-   * @Response 200 responseObj ok
+   * @Response 200 baseResponse ok
    */
   async detail() {
     const { ctx } = this;
-    console.log('--detail-rule--', ctx.rule)
     // 校验参数
     ctx.validate(ctx.rule.createAppDetailRequest, ctx.request.query)
     const { appId: app_id = '' } = ctx.query;

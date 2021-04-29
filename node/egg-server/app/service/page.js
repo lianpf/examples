@@ -1,6 +1,22 @@
 const Service = require('egg').Service;
 
 class PageService extends Service {
+  async create(params) {
+    let insertSuccess = false;
+    const {
+      page_id,
+      page_name,
+      app_id,
+      drag_platform_path
+    } = params;
+    const result = await this.app.mysql.insert('page', {
+      page_id,
+      page_name,
+      app_id,
+      drag_platform_path
+    });
+    return insertSuccess = result.affectedRows === 1;
+  }
   async list(params) {
     const { app_id } = params;
     const result = await this.app.mysql.select('pages', {

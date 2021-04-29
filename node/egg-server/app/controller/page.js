@@ -17,10 +17,10 @@ const babel = require("@babel/core");
  */
 class PageController extends Controller {
   /**
-   * @summary 根据appId查询app内Page列表
+   * @summary 查询app内Page列表
    * @description 根据appId查询app内Page列表
    * @Router get /api/page/list
-   * @Request query baseRequest appId description-createUser
+   * @Request query string appId 应用ID
    * @Request header string access_token
    * @Response 200 baseResponse ok
    */
@@ -33,17 +33,30 @@ class PageController extends Controller {
         list: pageList
       }
     })
-    // ctx.body = {
-    //   status: 200,
-    //   data: {
-    //     list: pageList
-    //   },
-    //   message: 'success'
-    // };
-    // ctx.status = 200;
   }
   /**
-   * @summary 根据pageId查询Page详细信息
+   * @summary 创建新页面
+   * @description 创建应用内新的资产
+   * @Router post /api/page/create
+   * @Request body createPageRequest *body
+   * @Response 200 baseResponse ok
+   */
+   async create() {
+    const { ctx } = this;
+    const { appId: app_id = '', pageName: page_name } = ctx.request.body;
+    const page_id = `page-${page_name}-${getUuid()}`
+    const createAssetsRes = await ctx.service.assets.create({
+      page_id,
+      page_name,
+      app_id,
+      drag_platform_path: '/configs?type=page'
+    })
+    if (createAssetsRes) {
+      ctx.helper.handleRes.success({ctx, res: {}, message: '新增页面成功'})
+    }
+  }
+  /**
+   * @summary 查询Page详细信息
    * @description 根据pageId查询Page详细信息
    * @Router get /api/page/detail
    * @Request query baseRequest pageId description-createUser
@@ -75,13 +88,43 @@ class PageController extends Controller {
     })
   }
   /**
-   * @desc: 上传自定义js code
-   * @step:
-   *  1-查到pages当前page是否存在custom_code_id
-   *  2-若存在，则获取filename，更新文件，更新custom_code
-   *  3-若不存在,则创建filename，insert custom_code，更新pages中custom_code_id
+   * @summary 查询Page简要信息
+   * @description 根据pageId查询Page详细信息
+   * @Router get /api/page/brief-info
+   * @Request query string *pageId 唯一ID
+   * @Request header string access_token
+   * @Response 200 baseResponse ok
+   */
+   async briefInfo() {
+    const { ctx } = this;
+    const { pageId: page_id } = ctx.query;
+    let params = {page_id}
+    let pageDetail
+    try {
+      pageDetail = await ctx.service.page.detail(params)
+    } catch (e) {
+      console.log(e)
+    }
+    ctx.helper.handleRes.success({
+      ctx,
+      res: pageDetail.length > 0 ? getObj(pageDetail) : {}
+    })
+  }
+  /**
+   * @summary Page模块-上传自定义js code（描述必读）
+   * @description Page模块-上传自定义js code（建议使用公共模块上传接口, /api/upload/code）
+   * @Router post /api/page/upload-code
+   * @Request body pageCodeRequest *body
+   * @Request header string access_token
+   * @Response 200 baseResponse ok
    * */
   async uploadCode() {
+    /**
+     * @step:
+     *  1-查到pages当前page是否存在custom_code_id
+     *  2-若存在，则获取filename，更新文件，更新custom_code
+     *  3-若不存在,则创建filename，insert custom_code，更新pages中custom_code_id
+     * */
     const { ctx } = this;
     const { jsCode, pageId: page_id } = ctx.request.body;
     if (!page_id) {

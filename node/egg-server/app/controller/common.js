@@ -21,11 +21,7 @@ class CommonController extends Controller {
    * @summary 上传配置信息Schema
    * @description 上传Page或assets 配置信息Schema
    * @Router post /api/upload/schema
-   * @Request body string pageId 页面或者资产 id
-   * @Request body string schemaId 配置Schema id(无则创建，有则更新)
-   * @Request body string schema 配置Schema
-   * @Request body string type page/assets
-   * @Request header string access_token
+   * @Request body uploadSchemaRequest *body
    * @Response 200 baseResponse ok
    */
   async uploadSchema() {
@@ -74,7 +70,7 @@ class CommonController extends Controller {
    * @summary 获取自定义 js code
    * @description 获取page或assets自定义 js code
    * @Router get /api/custom-code/detail
-   * @Request query string customCodeId 自定义js Code 上传记录id
+   * @Request query string customCodeId 自定义js Code 唯一标识
    * @Request header string access_token
    * @Response 200 baseResponse ok
    */
@@ -101,11 +97,7 @@ class CommonController extends Controller {
    * @summary 上传自定义 js code
    * @description 上传自定义 js code
    * @Router post /api/upload/code
-   * @Request body string pageId 页面或者资产 id
-   * @Request body string customCodeId 自定义js上传记录id(无则创建，有则更新)
-   * @Request body string jsCode 自定义代码
-   * @Request body string type page/assets
-   * @Request header string access_token
+   * @Request body uploadCodeRequest *body
    * @Response 200 baseResponse ok
    */
   async uploadCode() {

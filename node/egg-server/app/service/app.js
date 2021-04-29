@@ -2,7 +2,7 @@ const Service = require('egg').Service;
 
 class AppService extends Service {
   async create(params) {
-    console.log('-app-create-params-', params)
+    // console.log('-app-create-params-', params)
     const result = await this.app.mysql.insert('applications', {
       ...params
     });

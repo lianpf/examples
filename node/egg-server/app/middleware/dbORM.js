@@ -8,7 +8,8 @@
   // options === app.config.dbORM
   return async function dbORMMiddleware(ctx, next) {
     await next();
-    if (options.open) {
+    const apiReg = /^\/api\/*/i
+    if (options.open && apiReg.test(ctx.request.url)) {
       ctx.body.data = ctx.helper.handleORM(ctx.body.data)
     }
   }

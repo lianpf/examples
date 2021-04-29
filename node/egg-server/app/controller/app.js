@@ -20,7 +20,7 @@ class AppController extends Controller {
    * @Router get /api/app/list
    * @Request query baseRequest name description-baseRequest
    * @Request header string access_token
-   * @Response 200 baseResponse ok
+   * @Response 200 appListResponse ok
    */
   async list() {
     const { ctx } = this;
@@ -52,7 +52,7 @@ class AppController extends Controller {
    * @description 根据appId查询app详细信息
    * @Router get /api/app/detail
    * @Request query string *appId 应用ID
-   * @Response 200 baseResponse ok
+   * @Response 200 appDetailResponse ok
    */
   async detail() {
     const { ctx } = this;

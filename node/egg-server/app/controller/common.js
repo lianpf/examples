@@ -72,7 +72,7 @@ class CommonController extends Controller {
    * @Router get /api/custom-code/detail
    * @Request query string customCodeId 自定义js Code 唯一标识
    * @Request header string access_token
-   * @Response 200 baseResponse ok
+   * @Response 200 customCodeDetailResponse ok
    */
   async getCustomCode() {
     const { ctx } = this;

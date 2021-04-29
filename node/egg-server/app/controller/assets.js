@@ -22,7 +22,7 @@ class AssetsController extends Controller {
    * @Router get /api/assets/list
    * @Request query baseRequest pageId description-createUser
    * @Request header string access_token
-   * @Response 200 baseResponse ok
+   * @Response 200 assetsListResponse ok
    */
   async list() {
     const { ctx } = this;
@@ -63,7 +63,7 @@ class AssetsController extends Controller {
    * @Router get /api/assets/brief-info
    * @Request query string assetsId 资产id
    * @Request header string access_token
-   * @Response 200 baseResponse ok
+   * @Response 200 assetsBriefInfoResponse ok
    */
   async briefInfo() {
     const { ctx } = this;

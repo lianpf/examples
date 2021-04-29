@@ -22,7 +22,7 @@ class PageController extends Controller {
    * @Router get /api/page/list
    * @Request query string appId 应用ID
    * @Request header string access_token
-   * @Response 200 baseResponse ok
+   * @Response 200 pageListResponse ok
    */
   async list() {
     const { ctx } = this;
@@ -61,7 +61,7 @@ class PageController extends Controller {
    * @Router get /api/page/detail
    * @Request query baseRequest pageId description-createUser
    * @Request header string access_token
-   * @Response 200 baseResponse ok
+   * @Response 200 pageDetailResponse ok
    */
   async detail() {
     const { ctx } = this;
@@ -93,7 +93,7 @@ class PageController extends Controller {
    * @Router get /api/page/brief-info
    * @Request query string *pageId 唯一ID
    * @Request header string access_token
-   * @Response 200 baseResponse ok
+   * @Response 200 pageBriefInfoResponse ok
    */
    async briefInfo() {
     const { ctx } = this;

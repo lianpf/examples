@@ -1,6 +1,7 @@
 'use strict';
 
 const { app } = require('./model');
+const { baseResponse } = require('./index');
 
 const createApp = {
   createAppRequest: {
@@ -9,7 +10,29 @@ const createApp = {
   }
 }
 
+const appList = {
+  appListResponse: {
+    ...baseResponse,
+    data: {
+      type: 'array',
+      itemType: 'app'
+    }
+  }
+}
+
+const appDetail = {
+  appDetailResponse: {
+    ...baseResponse,
+    data: {
+      ...baseResponse.data,
+      type: 'app'
+    }
+  }
+}
+
 module.exports = {
-  ...createApp
+  ...createApp,
+  ...appList,
+  ...appDetail
 };
 

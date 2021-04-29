@@ -1,7 +1,22 @@
 'use strict';
 
-module.exports = {
-  pageDetailRequest: {
-    appId: { type: 'string', description: 'id 唯一键', required: true, example: '1' },
+const { app, page, customCode } = require('./model');
+
+const createPage = {
+  createPageRequest: {
+    appId: { ...app.appId, require: true },
+    pageName: { ...page.pageName, require: true }
   }
+}
+
+const pageCode = {
+  pageCodeRequest: {
+    appId: { ...app.appId, require: true },
+    jsCode: { ...customCode.code, require: true }
+  }
+}
+
+module.exports = {
+  ...createPage,
+  ...pageCode
 };
